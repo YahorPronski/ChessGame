@@ -1,6 +1,6 @@
-#include "OnClickHandler.h"
-#include "Moves.h"
-#include "SquareFinders.h"
+#include "../../Headers/ViewModel/OnClickHandler.h"
+#include "../../Headers/Model/Moves.h"
+#include "../../Headers/Model/SquareFinders.h"
 
 #include <map>
 

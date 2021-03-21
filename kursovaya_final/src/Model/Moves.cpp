@@ -1,6 +1,6 @@
-#include "Moves.h"
-
-std::map<short, short> findPawnMoves(Square** field, Square square) {
+#include "../../Headers/Model/Moves.h"
+#include <iostream>
+  std::map<short, short> findPawnMoves(Square** field, Square square) {
 	std::map<short, short> coordinates;
 
 	short tmpI = square.i - 1;

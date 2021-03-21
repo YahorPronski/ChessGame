@@ -1,14 +1,11 @@
-#include "Data.h"
+#include "../../Headers/Model/Data.h"
 
 Square** createAndFillLeftField() {
-
-    // Создаем поле
     Square** field = new Square*[8];
     for (int i = 0; i < 8; i++) {
         field[i] = new Square[8];
     }
 
-    // Горизонталь черных фигур
     field[0][0].pieceName = ROCK;
     field[0][1].pieceName = KNIGHT;
     field[0][2].pieceName = BISHOP;
@@ -26,7 +23,7 @@ Square** createAndFillLeftField() {
         field[0][j].isAbleToMove = false;
     }
 
-    // Горизонталь черных пешек
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     for (int j = 0; j < 8; j++) {
         field[1][j].pieceName = PAWN;
         field[1][j].pieceColor = BLACK;
@@ -36,7 +33,7 @@ Square** createAndFillLeftField() {
         field[1][j].isAbleToMove = false;
     }
 
-    // Горизонтали пустых клеток
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     for (int i = 5; i >= 2; i--) {
         for (int j = 0; j < 8; j++) {
             field[i][j].pieceName = NO_PIECE;
@@ -49,7 +46,7 @@ Square** createAndFillLeftField() {
         }
     }
 
-    // Горизонталь белых пешек
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     for (int j = 0; j < 8; j++) {
         field[6][j].pieceName = PAWN;
         field[6][j].pieceColor = WHITE;
@@ -59,7 +56,7 @@ Square** createAndFillLeftField() {
         field[6][j].isAbleToMove = true;
     }
 
-    // Горизонталь белых фигур
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     field[7][0].pieceName = ROCK;
     field[7][1].pieceName = KNIGHT;
     field[7][2].pieceName = BISHOP;
@@ -82,13 +79,13 @@ Square** createAndFillLeftField() {
 
 Square** createAndFillRightField() {
 
-    // Создаем поле
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     Square** field = new Square * [8];
     for (int i = 0; i < 8; i++) {
         field[i] = new Square[8];
     }
 
-    // Горизонталь черных фигур
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     field[0][0].pieceName = ROCK;
     field[0][1].pieceName = KNIGHT;
     field[0][2].pieceName = BISHOP;
@@ -106,7 +103,7 @@ Square** createAndFillRightField() {
         field[0][j].isAbleToMove = false;
     }
 
-    // Горизонталь белых пешек
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     for (int j = 0; j < 8; j++) {
         field[1][j].pieceName = PAWN;
         field[1][j].pieceColor = WHITE;
@@ -116,7 +113,7 @@ Square** createAndFillRightField() {
         field[1][j].isAbleToMove = false;
     }
 
-    // Горизонтали пустых клеток
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     for (int i = 5; i >= 2; i--) {
         for (int j = 0; j < 8; j++) {
             field[i][j].pieceName = NO_PIECE;
@@ -129,7 +126,7 @@ Square** createAndFillRightField() {
         }
     }
    
-    // Горизонталь черных пешек
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     for (int j = 0; j < 8; j++) {
         field[6][j].pieceName = PAWN;
         field[6][j].pieceColor = BLACK;
@@ -139,7 +136,7 @@ Square** createAndFillRightField() {
         field[6][j].isAbleToMove = true;
     }
 
-    // Горизонталь черных фигур
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     field[7][0].pieceName = ROCK;
     field[7][1].pieceName = KNIGHT;
     field[7][2].pieceName = BISHOP;

@@ -1,18 +1,12 @@
-﻿#include "Moves.h"
-#include "Data.h"
-#include "Values.h"
-#include "OnClickHandler.h"
+﻿#include "../Headers/Model/Data.h"
+#include "../Headers/Model/Moves.h"
+#include "../Headers/Model/Values.h"
+#include "../Headers/ViewModel/OnClickHandler.h"
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <unordered_map> 
 #include <map>
-
-// TODO
-// Рокировка
-// Взятие на проходе
-// Проверка на шах
-// Проверка на мат
 
 struct SquareTexture {
     PieceName pieceName;

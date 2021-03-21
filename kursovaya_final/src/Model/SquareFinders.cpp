@@ -1,4 +1,4 @@
-#include "SquareFinders.h"
+#include "../../Headers/Model/SquareFinders.h"
 
 bool isCorrectClick(bool isLeftField, sf::Vector2i mousePosition) {
 	if (isLeftField) {

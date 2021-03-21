@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Data.h"
-
+#include "../Model/Data.h"
+#include <iostream>
 #include <SFML/System/Vector2.hpp>
 #include <map>
 

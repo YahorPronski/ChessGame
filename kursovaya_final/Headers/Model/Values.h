@@ -10,15 +10,12 @@ enum PieceName {
 	ROCK,
 	PAWN,
 
-	// Для пустых клеток
 	NO_PIECE
 };
 
 enum PieceColor {
 	WHITE,
 	BLACK,
-
-	// Для пустых клеток
 	NO_COLOR
 };
 

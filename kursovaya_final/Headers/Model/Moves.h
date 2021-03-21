@@ -1,10 +1,9 @@
 #pragma once
-
+#include <iostream>
 #include "Data.h"
 
 #include <map>
 
-// Находит координаты текущих возможных ходов заданной фигуры
 std::map<short, short> findCurrentPossibleMoves(Square** field, Square square);
 
 std::map<short, short> findDiagonalMoves(Square** field, Square square);
