@@ -1,3 +1,0 @@
-/Users/apple/CLionProjects/Chess-for-one-PC/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/apple/CLionProjects/Chess-for-one-PC/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/apple/CLionProjects/Chess-for-one-PC/cmake-build-debug/CMakeFiles/kursovaya_final.dir
