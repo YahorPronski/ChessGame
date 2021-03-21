@@ -7,7 +7,7 @@ enum PieceName {
 	QUEEN,
 	BISHOP,
 	KNIGHT,
-	ROCK,
+	ROOK,
 	PAWN,
 
 	NO_PIECE

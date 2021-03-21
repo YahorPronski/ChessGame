@@ -55,7 +55,7 @@ private:
 
         // Заполняем массив в порядке расположения фигур в файле (сверху вниз)
         PieceName pieceNames[rows] = {
-            ROCK,
+            ROOK,
             KNIGHT,
             BISHOP,
             QUEEN,
@@ -311,55 +311,27 @@ private:
 //
 //}
 
-void printCoords(Square** field) {
-    std::cout << "=======\n";
-    for (int i = 0; i < 8; i++) {
-        for (int j = 0; j < 8; j++) {
-            std::cout << "(" << field[i][j].i << ", " << field[i][j].j << ")" << field[i][j].pieceName << "   ";
-        }
-        std::cout << std::endl;
-    }
-    std::cout << "=======\n";
-}
-
 int main()
 {
     float windowWidth = squareSize * 9 + spaceBetweenFields + squareSize * 9;
     float windowHeight = squareSize * 10;
+
     // create the window
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Chess");
 
     Square** leftField = createAndFillLeftField();
     Square** rightField = createAndFillRightField();
 
-    Square fromSq;
-    Square toSq;
-
-    sf::Vector2f clickedPos;
-    clickedPos.x = 0;
-    clickedPos.y = 0;
-
-    sf::Vector2f clickedPos2;
-    clickedPos2.x = 0;
-    clickedPos2.y = 0;
-
-    bool firstClickAccess = true;
-
     bool clickAccess = true;
-
-    Square tmp;
-
+    bool firstClickAccess = true;
     bool leftFieldOrderMove = true;
 
     TextureCoordinatesContainer container;
-
     std::map<short, short> mp;
 
     ChessBoard chess;
     if (!chess.load(textureFilePath, leftField, rightField, mp, container))
         return -1;
-
-    printCoords(leftField);
 
     // run the main loop
     while (window.isOpen())
@@ -394,9 +366,6 @@ int main()
                     }
                 }
                 else {
-
-                   
-                    
 
                 }
                 clickAccess = true;

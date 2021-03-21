@@ -7,31 +7,16 @@
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Application.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Application.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/Data.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/Data.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/Moves.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/Moves.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/SquareFinders.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/Model/SquareFinders.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/ViewModel/OnClickHandler.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/kursovaya_final/src/ViewModel/OnClickHandler.cpp.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/kursovaya_final.dir/link.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/kursovaya_final" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/kursovaya_final" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/kursovaya_final.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/kursovaya_final.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Data.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Data.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +27,13 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -57,18 +49,24 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -82,6 +80,7 @@
       <updated>1616329155737</updated>
       <workItem from="1616329156991" duration="6184000" />
       <workItem from="1616335905763" duration="2322000" />
+      <workItem from="1616361199258" duration="391000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -115,43 +114,5 @@
     <MESSAGE value="Added CMakeLists.txt and It is fucking working" />
     <MESSAGE value="Added c-make-build-debug" />
     <option name="LAST_COMMIT_MESSAGE" value="Added c-make-build-debug" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="605" y="369" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616329566504">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="605" y="369" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1792.1120@0.0.1792.1120" timestamp="1616329566504" />
-    <state x="266" y="135" key="CommitChangelistDialog2" timestamp="1616336043611">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="266" y="135" key="CommitChangelistDialog2/0.0.1792.1120@0.0.1792.1120" timestamp="1616336043611" />
-    <state x="751" y="304" key="EnvironmentVariablesDialog" timestamp="1616331453641">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="751" y="304" key="EnvironmentVariablesDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1616331453641" />
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom" timestamp="1616352461209">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.bottom/0.0.1792.1120@0.0.1792.1120" timestamp="1616352461209" />
-    <state width="1750" height="318" key="GridCell.Tab.0.center" timestamp="1616352461208">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.center/0.0.1792.1120@0.0.1792.1120" timestamp="1616352461208" />
-    <state width="1750" height="318" key="GridCell.Tab.0.left" timestamp="1616352461207">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.left/0.0.1792.1120@0.0.1792.1120" timestamp="1616352461207" />
-    <state width="1750" height="318" key="GridCell.Tab.0.right" timestamp="1616352461208">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state width="1750" height="318" key="GridCell.Tab.0.right/0.0.1792.1120@0.0.1792.1120" timestamp="1616352461208" />
-    <state x="496" y="300" key="Vcs.Push.Dialog.v2" timestamp="1616336046705">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="496" y="300" key="Vcs.Push.Dialog.v2/0.0.1792.1120@0.0.1792.1120" timestamp="1616336046705" />
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1616334343670">
-      <screen x="0" y="0" width="1792" height="1120" />
-    </state>
-    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1616334343670" />
   </component>
 </project>

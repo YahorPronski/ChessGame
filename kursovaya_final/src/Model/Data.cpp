@@ -6,14 +6,14 @@ Square** createAndFillLeftField() {
         field[i] = new Square[8];
     }
 
-    field[0][0].pieceName = ROCK;
+    field[0][0].pieceName = ROOK;
     field[0][1].pieceName = KNIGHT;
     field[0][2].pieceName = BISHOP;
     field[0][3].pieceName = QUEEN;
     field[0][4].pieceName = KING;
     field[0][5].pieceName = BISHOP;
     field[0][6].pieceName = KNIGHT;
-    field[0][7].pieceName = ROCK;
+    field[0][7].pieceName = ROOK;
 
     for (int j = 0; j < 8; j++) {
         field[0][j].pieceColor = BLACK;
@@ -57,14 +57,14 @@ Square** createAndFillLeftField() {
     }
 
     // ����������� ����� �����
-    field[7][0].pieceName = ROCK;
+    field[7][0].pieceName = ROOK;
     field[7][1].pieceName = KNIGHT;
     field[7][2].pieceName = BISHOP;
     field[7][3].pieceName = QUEEN;
     field[7][4].pieceName = KING;
     field[7][5].pieceName = BISHOP;
     field[7][6].pieceName = KNIGHT;
-    field[7][7].pieceName = ROCK;
+    field[7][7].pieceName = ROOK;
 
     for (int j = 0; j < 8; j++) {
         field[7][j].pieceColor = WHITE;
@@ -86,14 +86,14 @@ Square** createAndFillRightField() {
     }
 
     // ����������� ������ �����
-    field[0][0].pieceName = ROCK;
+    field[0][0].pieceName = ROOK;
     field[0][1].pieceName = KNIGHT;
     field[0][2].pieceName = BISHOP;
     field[0][3].pieceName = KING;
     field[0][4].pieceName = QUEEN;
     field[0][5].pieceName = BISHOP;
     field[0][6].pieceName = KNIGHT;
-    field[0][7].pieceName = ROCK;
+    field[0][7].pieceName = ROOK;
 
     for (int j = 0; j < 8; j++) {
         field[0][j].pieceColor = WHITE;
@@ -137,14 +137,14 @@ Square** createAndFillRightField() {
     }
 
     // ����������� ������ �����
-    field[7][0].pieceName = ROCK;
+    field[7][0].pieceName = ROOK;
     field[7][1].pieceName = KNIGHT;
     field[7][2].pieceName = BISHOP;
     field[7][3].pieceName = KING;
     field[7][4].pieceName = QUEEN;
     field[7][5].pieceName = BISHOP;
     field[7][6].pieceName = KNIGHT;
-    field[7][7].pieceName = ROCK;
+    field[7][7].pieceName = ROOK;
 
     for (int j = 0; j < 8; j++) {
         field[7][j].pieceColor = BLACK;

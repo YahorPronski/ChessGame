@@ -104,7 +104,7 @@ std::map<short, short> findCurrentPossibleMoves(Square** field, Square square) {
 
 		break;
 	}
-	case ROCK: {
+	case ROOK: {
 		std::map<short, short> moves1 = findVerticalMoves(field, square);
 		std::map<short, short> moves2 = findHorizontalMoves(field, square);
 
