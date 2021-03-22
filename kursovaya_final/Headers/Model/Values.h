@@ -9,7 +9,6 @@ enum PieceName {
 	KNIGHT,
 	ROOK,
 	PAWN,
-
 	NO_PIECE
 };
 
@@ -20,7 +19,7 @@ enum PieceColor {
 };
 
 const float fileTextureSquareScale = 128;
-const float squareSize = 128;
+const float squareSize = 64;
 const float spaceBetweenFields = squareSize * 3;
 
-const std::string textureFilePath = "chess_texture.jpg";
+const std::string textureFilePath = "resource\\chess_texture.jpg";

@@ -8,12 +8,9 @@ struct Square {
     PieceColor pieceColor;
     PieceColor colorOfSquare;
 
-    int i;
-    int j;
-    bool isAbleToMove;
+    short i;
+    short j;
 };
 
 Square** createAndFillLeftField();
-
-
 Square** createAndFillRightField();
