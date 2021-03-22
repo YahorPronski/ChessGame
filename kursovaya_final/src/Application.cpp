@@ -5,15 +5,6 @@
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
 
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <unordered_map> 
-
-
-
-
-
-
 
 //void makeMove(Square** leftField,Square** rightField, Coords from, Coords to, bool isLeft) {
 //    Square fromSq;
@@ -142,7 +133,6 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 

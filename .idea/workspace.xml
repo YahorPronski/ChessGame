@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="kursovaya_final" targetName="kursovaya_final" />
-    </generated>
+    <generated />
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -12,22 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="Added c-make-build-debug">
-      <change afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kursovaya_final/Headers/ViewModel/OnClickHandling.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandling.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Data.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Data.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Moves.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Moves.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/SquareFinders.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/ViewModel/OnClickHandler.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/chess_texture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/resource/chess_texture.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Data.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Data.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/SquareFinders.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandler.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +21,6 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -52,8 +35,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectId" id="1q4BoLPDgfQN2zCi2UVtkDn6Qdx" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -75,7 +60,7 @@
         <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
-    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
+    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="kursovaya_final">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -102,7 +87,7 @@
       <workItem from="1616407386562" duration="2447000" />
       <workItem from="1616410156116" duration="3710000" />
       <workItem from="1616424809091" duration="4090000" />
-      <workItem from="1616441546406" duration="7705000" />
+      <workItem from="1616441546406" duration="8021000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -132,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616361616841</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added c-make-build-debug">
+      <created>1616449329841</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1616449329841</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
