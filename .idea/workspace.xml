@@ -11,11 +11,8 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="added moving of pieces">
+    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="Added checking for check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Moves.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Moves.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" afterDir="false" />
     </list>
@@ -63,6 +60,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -88,7 +90,7 @@
       <workItem from="1616441546406" duration="8124000" />
       <workItem from="1616449763782" duration="1983000" />
       <workItem from="1616494070086" duration="5972000" />
-      <workItem from="1616506464774" duration="1839000" />
+      <workItem from="1616506464774" duration="3396000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -139,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616449882349</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added checking for check">
+      <created>1616508426089</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1616508426089</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,88 +170,10 @@
     <MESSAGE value="Nothin" />
     <MESSAGE value="Added CMakeLists.txt and It is fucking working" />
     <MESSAGE value="Added c-make-build-debug" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added c-make-build-debug" />
+    <MESSAGE value="Added checking for check" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checking for check" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>217</line>
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>199</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>180</line>
-          <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>162</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>142</line>
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>123</line>
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>104</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>85</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>56</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>248</line>
-          <option name="timeStamp" value="80" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>276</line>
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>290</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>302</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>308</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>135</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="currentMoves._M_t" />

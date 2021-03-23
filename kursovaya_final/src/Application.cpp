@@ -4,11 +4,17 @@
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
 
+// Доделать:
+// Звуки
+// Взятие на проходе
+// Рокировка
+// Таймер
+// Проверка на мат
+// Добавить текстуры координаты доски
+
 int main()
 {
-
-
-    // create the window
+    // Create the window
     sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight), "Chess");
 
     Square** leftField = createAndFillLeftField();
@@ -31,10 +37,10 @@ int main()
     if (!chessTexture.load(leftField, rightField, container))
         return -1;
 
-    // run the main loop
+    // Run the main loop
     while (window.isOpen())
     {
-        // handle events
+        // Handle exit event
         sf::Event event;
         while (window.pollEvent(event))
         {
@@ -54,6 +60,7 @@ int main()
                 if (isCorrectClick(isLeftField, mousePosition)) {
                     fromSquare = findSquareByCoordinates(currentField, isLeftField, mousePosition);
 
+                    // Show moves if true
                     if (fromSquare.pieceColor == (isLeftField ? WHITE : BLACK)) {
 
                         currentMoves = findCurrentPossibleMoves(currentField, fromSquare);
@@ -65,6 +72,7 @@ int main()
                 } else {firstClickAccess = true;}
             } else {
 
+                // Make move if true
                 if (isCorrectMove(currentMoves, isLeftField, mousePosition)) {
 
                     toSquare = findSquareByCoordinates(currentField, isLeftField, mousePosition);
@@ -76,27 +84,34 @@ int main()
                     isLeftField = isLeftField ? false : true;
                     firstClickAccess = true;
 
-                } else if (isCorrectClick(isLeftField, mousePosition)) {
+                }
+                else if (isCorrectClick(isLeftField, mousePosition)) {
 
                     fromSquare = findSquareByCoordinates(currentField, isLeftField, mousePosition);
 
+                    // Show moves if true
                     if (fromSquare.pieceColor == (isLeftField ? WHITE : BLACK)) {
                         currentMoves = findCurrentPossibleMoves(currentField, fromSquare);
 
                         movesTexture.load(currentMoves, isLeftField);
                         showMoves = true;
 
-                    } else {
+                    }
+                    // Hide moves
+                    else {
                         showMoves = false;
                         firstClickAccess = true;
                     }
-                } else {
+                }
+                // Hide moves
+                else {
                     showMoves = false;
                     firstClickAccess = true;
                 }
             }
         }
 
+        // Draw
         window.clear();
         window.draw(chessTexture);
         if (showMoves) window.draw(movesTexture);

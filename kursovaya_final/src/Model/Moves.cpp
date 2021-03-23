@@ -46,20 +46,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     // Get color of king
     PieceColor kingColor = fromSquare.pieceColor;
 
-    Square kingSquare;
-
-    // Find king of required color
-    for (short i = 0; i < 8; i++) {
-        for (short j = 0; j < 8; j++) {
-            if (field[i][j].pieceName == KING &&
-            field[i][j].pieceColor == kingColor) {
-
-                kingSquare = field[i][j];
-                break;
-            }
-        }
-    }
-
     // For example we did this move (then we need to change it back!!!!)
     field[fromSquare.i][fromSquare.j].pieceName = NO_PIECE;
     field[fromSquare.i][fromSquare.j].pieceColor = NO_COLOR;
@@ -69,10 +55,26 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     field[toSquare.i][toSquare.j].pieceColor = fromSquare.pieceColor;
     field[toSquare.i][toSquare.j].colorOfSquare = toSquare.colorOfSquare;
 
+    // Find king of required color
+    bool wasFound = false;
+    Square kingSquare;
+    for (short i = 0; i < 8; i++) {
+        for (short j = 0; j < 8; j++) {
+            if (field[i][j].pieceName == KING &&
+                field[i][j].pieceColor == kingColor) {
+
+                kingSquare = field[i][j];
+                wasFound = true;
+                break;
+            }
+        }
+    }
+    if (!wasFound) throw "King wasn't found";
 
     // Then check if will be check
-    short tmpI = kingSquare.i + 1;
-    short tmpJ = kingSquare.j + 1;
+
+    auto tmpI = (short)kingSquare.i + 1;
+    auto tmpJ = (short)kingSquare.j + 1;
 
     // Diagonals
     while (tmpI < 8 && tmpJ < 8) {
