@@ -43,9 +43,6 @@ void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromS
 
 bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
 
-    // Get color of king
-    PieceColor kingColor = fromSquare.pieceColor;
-
     // For example we did this move (then we need to change it back!!!!)
     field[fromSquare.i][fromSquare.j].pieceName = NO_PIECE;
     field[fromSquare.i][fromSquare.j].pieceColor = NO_COLOR;
@@ -54,6 +51,9 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     field[toSquare.i][toSquare.j].pieceName = fromSquare.pieceName;
     field[toSquare.i][toSquare.j].pieceColor = fromSquare.pieceColor;
     field[toSquare.i][toSquare.j].colorOfSquare = toSquare.colorOfSquare;
+
+    // Get color of king
+    PieceColor kingColor = fromSquare.pieceColor;
 
     // Find king of required color
     bool wasFound = false;
