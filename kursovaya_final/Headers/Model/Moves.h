@@ -7,6 +7,7 @@
 #include <SFML/System/Vector2.hpp>
 
 void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromSquare, Square toSquare);
+bool willBeCheck(Square** field, Square fromSquare, Square toSquare);
 
 std::vector<sf::Vector2<short>> findCurrentPossibleMoves(Square** field, Square square);
 
