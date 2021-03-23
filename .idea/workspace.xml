@@ -13,7 +13,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="Added checking for check">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,14 +59,14 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -90,7 +89,8 @@
       <workItem from="1616441546406" duration="8124000" />
       <workItem from="1616449763782" duration="1983000" />
       <workItem from="1616494070086" duration="5972000" />
-      <workItem from="1616506464774" duration="3396000" />
+      <workItem from="1616506464774" duration="5133000" />
+      <workItem from="1616514890604" duration="1681000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -148,7 +148,21 @@
       <option name="project" value="LOCAL" />
       <updated>1616508426089</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added checking for check">
+      <created>1616509890810</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1616509890810</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added checking for check">
+      <created>1616510001082</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1616510001082</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +188,20 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added checking for check" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
+          <line>274</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
+          <line>66</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="currentMoves._M_t" />

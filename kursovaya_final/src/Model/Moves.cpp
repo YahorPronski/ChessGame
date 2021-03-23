@@ -79,16 +79,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     // Diagonals
     while (tmpI < 8 && tmpJ < 8) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-        (field[tmpI][tmpJ].pieceName == QUEEN ||
-        field[tmpI][tmpJ].pieceName == BISHOP)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == BISHOP) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI++;
         tmpJ++;
@@ -98,16 +101,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j + 1;
     while (tmpI >= 0 && tmpJ < 8) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == BISHOP)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == BISHOP) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI--;
         tmpJ++;
@@ -117,16 +123,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j - 1;
     while (tmpI < 8 && tmpJ >= 0) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == BISHOP)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == BISHOP) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI++;
         tmpJ--;
@@ -136,16 +145,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j - 1;
     while (tmpI >= 0 && tmpJ >= 0) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == BISHOP)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == BISHOP) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI--;
         tmpJ--;
@@ -156,16 +168,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j - 1;
     while (tmpJ >= 0) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == ROOK)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == ROOK) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpJ--;
     }
@@ -174,16 +189,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j + 1;
     while (tmpJ < 8) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == ROOK)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == ROOK) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpJ++;
     }
@@ -193,16 +211,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j;
     while (tmpI >= 0) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == ROOK)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == ROOK) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI--;
     }
@@ -211,16 +232,19 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     tmpJ = kingSquare.j;
     while (tmpI < 8) {
 
-        if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
-            (field[tmpI][tmpJ].pieceName == QUEEN ||
-             field[tmpI][tmpJ].pieceName == ROOK)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
-            return true;
-        }
-        else if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor){
+        if (field[tmpI][tmpJ].pieceColor == kingSquare.pieceColor) {
             break;
+        }
+        else {
+            if (field[tmpI][tmpJ].pieceName == QUEEN ||
+                field[tmpI][tmpJ].pieceName == ROOK) {
+
+                field[fromSquare.i][fromSquare.j] = fromSquare;
+                field[toSquare.i][toSquare.j] = toSquare;
+                return true;
+            } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
+                break;
+            }
         }
         tmpI++;
     }
@@ -239,8 +263,8 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
 
     for (auto & move : knightMoves) {
 
-        tmpI = move[0];
-        tmpJ = move[1];
+        tmpI = kingSquare.i + move[0];
+        tmpJ = kingSquare.j + move[1];
 
         if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
             if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
@@ -267,8 +291,8 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
 
     for (auto & move : kingMoves) {
 
-        tmpI = move[0];
-        tmpJ = move[1];
+        tmpI = kingSquare.i + move[0];
+        tmpJ = kingSquare.j + move[1];
 
         if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
             if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
