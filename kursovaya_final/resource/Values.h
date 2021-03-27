@@ -18,8 +18,8 @@ enum PieceColor {
 	NO_COLOR
 };
 
-const float fileTextureSquareScale = 128;
-const float squareSize = 64;
+const float fileSquareSize = 128;
+const float squareSize = 100;
 const float spaceBetweenFields = squareSize;
 
 const int windowWidth = squareSize * 9 + spaceBetweenFields + squareSize * 9;

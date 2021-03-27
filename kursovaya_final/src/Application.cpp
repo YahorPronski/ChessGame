@@ -11,6 +11,7 @@
 // Таймер
 // Проверка на мат
 // Добавить текстуры координаты доски
+// Превращение пешки
 
 int main()
 {
@@ -31,11 +32,15 @@ int main()
     Square fromSquare;
     Square toSquare;
 
-    MovesTexture movesTexture;
     ChessTexture chessTexture;
-
     if (!chessTexture.load(leftField, rightField, container))
         return -1;
+
+    CoordinatesTexture coordsTexture;
+    if (!coordsTexture.load())
+        return -1;
+
+    MovesTexture movesTexture;
 
     // Run the main loop
     while (window.isOpen())
@@ -114,6 +119,7 @@ int main()
         // Draw
         window.clear();
         window.draw(chessTexture);
+        window.draw(coordsTexture);
         if (showMoves) window.draw(movesTexture);
         window.display();
     }

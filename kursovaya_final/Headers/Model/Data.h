@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Values.h"
+#include "../../resource/Values.h"
 
 struct Square {
 

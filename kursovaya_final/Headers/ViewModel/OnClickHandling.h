@@ -1,7 +1,7 @@
 #pragma once
 
 #include "../Model/Data.h"
-#include "../Model/Values.h"
+#include "../../resource/Values.h"
 
 #include <vector>
 #include <SFML/System/Vector2.hpp>

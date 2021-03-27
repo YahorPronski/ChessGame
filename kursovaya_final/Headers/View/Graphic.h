@@ -38,9 +38,9 @@ public:
                 sf::Vector2f coordinates = container.find(squareTexture);
 
                 quad[0].texCoords = sf::Vector2f(coordinates.x, coordinates.y);
-                quad[1].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y);
-                quad[2].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y + fileTextureSquareScale);
-                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileTextureSquareScale);
+                quad[1].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y);
+                quad[2].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y + fileSquareSize);
+                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileSquareSize);
             }
         }
 
@@ -64,9 +64,9 @@ public:
                 sf::Vector2f coordinates = container.find(squareTexture);
 
                 quad[0].texCoords = sf::Vector2f(coordinates.x, coordinates.y);
-                quad[1].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y);
-                quad[2].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y + fileTextureSquareScale);
-                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileTextureSquareScale);
+                quad[1].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y);
+                quad[2].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y + fileSquareSize);
+                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileSquareSize);
             }
         }
 
@@ -115,10 +115,10 @@ public:
                 quad[2].position = sf::Vector2f(squareSize, (i + 2) * squareSize);
                 quad[3].position = sf::Vector2f(squareSize * (2.f / 3.f), (i + 2) * squareSize);
 
-                quad[0].texCoords = sf::Vector2f(fileTextureSquareScale * , coordinates.y);
-                quad[1].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y);
-                quad[2].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y + fileTextureSquareScale);
-                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileTextureSquareScale);
+                quad[0].texCoords = sf::Vector2f(fileSquareSize * , coordinates.y);
+                quad[1].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y);
+                quad[2].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y + fileSquareSize);
+                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileSquareSize);
         }
 
         // Рисуем правое поле
@@ -141,9 +141,9 @@ public:
                 sf::Vector2f coordinates = container.find(squareTexture);
 
                 quad[0].texCoords = sf::Vector2f(coordinates.x, coordinates.y);
-                quad[1].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y);
-                quad[2].texCoords = sf::Vector2f(coordinates.x + fileTextureSquareScale, coordinates.y + fileTextureSquareScale);
-                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileTextureSquareScale);
+                quad[1].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y);
+                quad[2].texCoords = sf::Vector2f(coordinates.x + fileSquareSize, coordinates.y + fileSquareSize);
+                quad[3].texCoords = sf::Vector2f(coordinates.x, coordinates.y + fileSquareSize);
             }
         }
 
@@ -244,4 +244,108 @@ private:
     }
 
     sf::VertexArray vertices;
+};
+
+
+class CoordinatesTexture : public sf::Drawable, public sf::Transformable
+{
+public:
+
+    bool load() {
+
+        // Скачиваем файл с текстурами
+        if (!textureFile.loadFromFile(textureFilePath))
+            return false;
+
+        vertices.setPrimitiveType(sf::Quads);
+        vertices.resize(8 * 4 * 4);
+
+
+        // Drawing digits for left field
+        for (int i = 0; i < 8; i++) {
+
+            sf::Vertex *quad = &vertices[i * 4];
+
+            quad[0].position = sf::Vector2f(squareSize * (2.f/3.f), squareSize*(i+1));
+            quad[1].position = sf::Vector2f(squareSize, squareSize*(i+1));
+            quad[2].position = sf::Vector2f(squareSize, squareSize*(i+2));
+            quad[3].position = sf::Vector2f(squareSize * (2.f/3.f), squareSize*(i+2));
+
+            quad[0].texCoords = sf::Vector2f(fileSquareSize * (5 + 2.f/3.f), fileSquareSize * (7 - i));
+            quad[1].texCoords = sf::Vector2f(fileSquareSize * (6), fileSquareSize * (7 - i));
+            quad[2].texCoords = sf::Vector2f(fileSquareSize * (6), fileSquareSize * (8 - i));
+            quad[3].texCoords = sf::Vector2f(fileSquareSize * (5 + 2.f / 3.f), fileSquareSize * (8 - i));
+
+        }
+
+        // Drawing letters for left field
+        for (int i = 0; i < 8; i++) {
+
+            sf::Vertex *quad = &vertices[i * 4 + 8 * 4];
+
+            quad[0].position = sf::Vector2f(squareSize*(i + 1), 9 * squareSize);
+            quad[1].position = sf::Vector2f(squareSize*(i + 2), 9 * squareSize);
+            quad[2].position = sf::Vector2f(squareSize*(i + 2), 10 * squareSize);
+            quad[3].position = sf::Vector2f(squareSize*(i + 1), 10 * squareSize);
+
+            quad[0].texCoords = sf::Vector2f(fileSquareSize * (4), fileSquareSize * (i));
+            quad[1].texCoords = sf::Vector2f(fileSquareSize * (5), fileSquareSize * (i));
+            quad[2].texCoords = sf::Vector2f(fileSquareSize * (5), fileSquareSize * (i + 1));
+            quad[3].texCoords = sf::Vector2f(fileSquareSize * (4), fileSquareSize * (i + 1));
+
+        }
+
+        // Drawing digits for right field
+        for (int i = 0; i < 8; i++) {
+
+            sf::Vertex *quad = &vertices[i * 4 + 8 * 4 * 2];
+
+            quad[0].position = sf::Vector2f(squareSize * 17  + spaceBetweenFields, squareSize*(i+1));
+            quad[1].position = sf::Vector2f(squareSize * (17 + 1.f / 3.f)  + spaceBetweenFields, squareSize*(i+1));
+            quad[2].position = sf::Vector2f(squareSize * (17 + 1.f / 3.f)  + spaceBetweenFields, squareSize*(i+2));
+            quad[3].position = sf::Vector2f(squareSize * 17 + spaceBetweenFields, squareSize*(i+2));
+
+            quad[0].texCoords = sf::Vector2f(fileSquareSize * (5 + 2.f/3.f), fileSquareSize * (i));
+            quad[1].texCoords = sf::Vector2f(fileSquareSize * (6), fileSquareSize * (i));
+            quad[2].texCoords = sf::Vector2f(fileSquareSize * (6), fileSquareSize * (i + 1));
+            quad[3].texCoords = sf::Vector2f(fileSquareSize * (5 + 2.f/3.f), fileSquareSize * (i + 1));
+
+        }
+
+        // Drawing letters for right field
+        for (int i = 0; i < 8; i++) {
+
+            sf::Vertex *quad = &vertices[i * 4 + 8 * 4 * 3];
+
+            quad[0].position = sf::Vector2f(squareSize*(i + 9) + spaceBetweenFields , 9 * squareSize);
+            quad[1].position = sf::Vector2f(squareSize*(i + 10) + spaceBetweenFields, 9 * squareSize);
+            quad[2].position = sf::Vector2f(squareSize*(i + 10) + spaceBetweenFields, 10 * squareSize);
+            quad[3].position = sf::Vector2f(squareSize*(i + 9) + spaceBetweenFields, 10 * squareSize);
+
+            quad[0].texCoords = sf::Vector2f(fileSquareSize * (4), fileSquareSize * (7 - i));
+            quad[1].texCoords = sf::Vector2f(fileSquareSize * (5), fileSquareSize * (7 - i));
+            quad[2].texCoords = sf::Vector2f(fileSquareSize * (5), fileSquareSize * (8 - i));
+            quad[3].texCoords = sf::Vector2f(fileSquareSize * (4), fileSquareSize * (8 - i));
+
+        }
+
+        return true;
+    }
+
+private:
+
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+    {
+        // apply the transform
+        states.transform *= getTransform();
+
+        // apply the texture
+        states.texture = &textureFile;
+
+        // draw the vertex array
+        target.draw(vertices, states);
+    }
+
+    sf::VertexArray vertices;
+    sf::Texture textureFile;
 };
