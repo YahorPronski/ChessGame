@@ -6,12 +6,14 @@
 
 // Доделать:
 // Звуки
-// Взятие на проходе
 // Рокировка
 // Таймер
 // Проверка на мат
 // Добавить текстуры координаты доски
 // Превращение пешки
+
+// Взятие на проходе
+
 
 int main()
 {
@@ -33,14 +35,13 @@ int main()
     Square toSquare;
 
     ChessTexture chessTexture;
-    if (!chessTexture.load(leftField, rightField, container))
-        return -1;
-
     CoordinatesTexture coordsTexture;
-    if (!coordsTexture.load())
-        return -1;
-
+    BordersTexture fieldBordersTexture;
     MovesTexture movesTexture;
+
+    if (!chessTexture.load(leftField, rightField, container)) return -1;
+    if (!coordsTexture.load()) return -1;
+    if (!fieldBordersTexture.load()) return -1;
 
     // Run the main loop
     while (window.isOpen())
@@ -116,12 +117,16 @@ int main()
             }
         }
 
+
         // Draw
         window.clear();
         window.draw(chessTexture);
         window.draw(coordsTexture);
+        window.draw(fieldBordersTexture);
         if (showMoves) window.draw(movesTexture);
         window.display();
+
+        sf::sleep(sf::milliseconds(40));
     }
 
     return 0;

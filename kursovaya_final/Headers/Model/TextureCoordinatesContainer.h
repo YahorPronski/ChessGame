@@ -60,13 +60,13 @@ private:
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
 
-                SquareTexture squareTexture{
+                SquareTexture squareTexture {
                         pieceNames[i],
                         j < 2 ? WHITE : BLACK,
                         j % 2 == 0 ? WHITE : BLACK
                 };
 
-                sf::Vector2f vector{fileSquareSize * j, fileSquareSize * i };
+                sf::Vector2f vector {fileSquareSize * j, fileSquareSize * i };
 
                 std::pair<SquareTexture, sf::Vector2f> myPair(squareTexture, vector);
                 textureCoordinatesMap.insert(myPair);
@@ -74,17 +74,17 @@ private:
         }
 
         // Белая пустая клетка
-        SquareTexture squareTextureWhitePawn{NO_PIECE, NO_COLOR, WHITE};
+        SquareTexture emptySquareTextureWhite {NO_PIECE, NO_COLOR, WHITE};
         sf::Vector2f vectorWhite{fileSquareSize * 0, fileSquareSize * 8 };
 
-        std::pair<SquareTexture, sf::Vector2f> myPairWhite(squareTextureWhitePawn, vectorWhite);
+        std::pair<SquareTexture, sf::Vector2f> myPairWhite(emptySquareTextureWhite, vectorWhite);
         textureCoordinatesMap.insert(myPairWhite);
 
         // Чёрная пустая клетка
-        SquareTexture squareTextureBlackPawn{ NO_PIECE, NO_COLOR, BLACK };
-        sf::Vector2f vectorBlack{fileSquareSize * 1, fileSquareSize * 8 };
+        SquareTexture emptySquareTextureBlack {NO_PIECE, NO_COLOR, BLACK };
+        sf::Vector2f vectorBlack {fileSquareSize * 1, fileSquareSize * 8 };
 
-        std::pair<SquareTexture, sf::Vector2f> myPairBlack(squareTextureBlackPawn, vectorBlack);
+        std::pair<SquareTexture, sf::Vector2f> myPairBlack(emptySquareTextureBlack, vectorBlack);
         textureCoordinatesMap.insert(myPairBlack);
     }
 };

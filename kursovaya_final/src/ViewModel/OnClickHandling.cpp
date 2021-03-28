@@ -31,7 +31,6 @@ Square findSquareByCoordinates(Square** field, bool isLeft, sf::Vector2i mousePo
 
 bool isCorrectMove(std::vector<sf::Vector2<short>> currentMoves, bool isLeft, sf::Vector2i mousePosition) {
 
-
     auto it = currentMoves.begin();
     while(it != currentMoves.end()) {
 

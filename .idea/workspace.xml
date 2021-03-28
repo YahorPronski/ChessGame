@@ -11,13 +11,15 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="Added checking for check">
+    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/kursovaya_final/resource/coords_texture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/Values.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/resource/chess_texture.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/resource/chess_texture.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/resource/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/resource/Values.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandling.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandling.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +64,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="kursovaya_final" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$PROJECT_DIR$/kursovaya_final" PASS_PARENT_ENVS_2="true" PROJECT_NAME="kursovaya_final" TARGET_NAME="kursovaya_final" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="kursovaya_final" RUN_TARGET_NAME="kursovaya_final">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -102,6 +99,9 @@
       <workItem from="1616671366893" duration="6466000" />
       <workItem from="1616678436072" duration="377000" />
       <workItem from="1616763785014" duration="1097000" />
+      <workItem from="1616865237550" duration="12676000" />
+      <workItem from="1616913190933" duration="2049000" />
+      <workItem from="1616918187612" duration="5980000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -180,7 +180,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616516591125</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added field's coordinates">
+      <created>1616865358744</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1616865358744</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,23 +210,10 @@
     <MESSAGE value="Added CMakeLists.txt and It is fucking working" />
     <MESSAGE value="Added c-make-build-debug" />
     <MESSAGE value="Added checking for check" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added checking for check" />
+    <MESSAGE value="added field's coordinates" />
+    <option name="LAST_COMMIT_MESSAGE" value="added field's coordinates" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>274</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/kursovaya_final/src/Model/Moves.cpp</url>
-          <line>66</line>
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
         <watch expression="currentMoves._M_t" />
