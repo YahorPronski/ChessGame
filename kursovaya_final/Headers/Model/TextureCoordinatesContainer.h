@@ -75,14 +75,14 @@ private:
 
         // Белая пустая клетка
         SquareTexture emptySquareTextureWhite {NO_PIECE, NO_COLOR, WHITE};
-        sf::Vector2f vectorWhite{fileSquareSize * 0, fileSquareSize * 8 };
+        sf::Vector2f vectorWhite{fileSquareSize * 0, fileSquareSize * 7 };
 
         std::pair<SquareTexture, sf::Vector2f> myPairWhite(emptySquareTextureWhite, vectorWhite);
         textureCoordinatesMap.insert(myPairWhite);
 
         // Чёрная пустая клетка
         SquareTexture emptySquareTextureBlack {NO_PIECE, NO_COLOR, BLACK };
-        sf::Vector2f vectorBlack {fileSquareSize * 1, fileSquareSize * 8 };
+        sf::Vector2f vectorBlack {fileSquareSize * 1, fileSquareSize * 7 };
 
         std::pair<SquareTexture, sf::Vector2f> myPairBlack(emptySquareTextureBlack, vectorBlack);
         textureCoordinatesMap.insert(myPairBlack);

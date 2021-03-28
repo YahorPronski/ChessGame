@@ -11,15 +11,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/kursovaya_final/resource/coords_texture.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="d91ed003-907f-43d5-9e7b-0bfa8563b0a6" name="Default Changelist" comment="added field's coordinates and boarders">
+      <change afterPath="$PROJECT_DIR$/kursovaya_final/resource/chess_blue_theme.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kursovaya_final/resource/chess_orange_theme.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/Headers/View/Graphic.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kursovaya_final/resource/Values.h" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/resource/Values.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/Application.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandling.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/kursovaya_final/src/ViewModel/OnClickHandling.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursovaya_final/resource/chess_texture.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,10 @@
       <workItem from="1616763785014" duration="1097000" />
       <workItem from="1616865237550" duration="12676000" />
       <workItem from="1616913190933" duration="2049000" />
-      <workItem from="1616918187612" duration="5980000" />
+      <workItem from="1616918187612" duration="6596000" />
+      <workItem from="1616946551350" duration="1129000" />
+      <workItem from="1616953650006" duration="23000" />
+      <workItem from="1616953854655" duration="2177000" />
     </task>
     <task id="LOCAL-00001" summary="Nothin">
       <created>1616331074022</created>
@@ -187,7 +189,28 @@
       <option name="project" value="LOCAL" />
       <updated>1616865358744</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added field's coordinates and boarders">
+      <created>1616924645808</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1616924645808</updated>
+    </task>
+    <task id="LOCAL-00014" summary="added field's coordinates and boarders">
+      <created>1616924884599</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1616924884599</updated>
+    </task>
+    <task id="LOCAL-00015" summary="added field's coordinates and boarders">
+      <created>1616924961726</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1616924961726</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +234,8 @@
     <MESSAGE value="Added c-make-build-debug" />
     <MESSAGE value="Added checking for check" />
     <MESSAGE value="added field's coordinates" />
-    <option name="LAST_COMMIT_MESSAGE" value="added field's coordinates" />
+    <MESSAGE value="added field's coordinates and boarders" />
+    <option name="LAST_COMMIT_MESSAGE" value="added field's coordinates and boarders" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

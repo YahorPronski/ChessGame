@@ -316,7 +316,7 @@ public:
                                              (it->y + 1) * squareSize + squareSize - 0.02f * squareSize);
 
             for (int j = 0; j < 16; j++) {
-                quad[j].color = sf::Color::Magenta;
+                quad[j].color = sf::Color::Blue;
             }
 
         }

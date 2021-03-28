@@ -29,5 +29,5 @@ const int windowHeight = squareSize * 10;
 const float thickness = squareSize / 15.f;
 const float margin = thickness * 0.4f;
 
-const std::string textureFilePath = "resource//chess_texture.jpg";
+const std::string textureFilePath = "resource//chess_orange_theme.jpg";
 const std::string coordsTextureFilePath = "resource//coords_texture.jpg";
