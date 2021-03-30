@@ -4,6 +4,8 @@
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
 
+#include <SFML/Audio.hpp>
+
 // Доделать:
 // Звуки
 // Рокировка
@@ -11,7 +13,6 @@
 // Проверка на мат
 // Добавить текстуры координаты доски
 // Превращение пешки
-
 // Взятие на проходе
 
 
@@ -55,8 +56,11 @@ int main()
         }
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-
-            sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+//            sf::Music music;
+//            if (!music.openFromFile("resource//Lab3_Vadim.wav"))
+//              return -1; // error
+//            music.play();
+              sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
             currentField = isLeftField ? leftField : rightField;
 
@@ -117,7 +121,6 @@ int main()
             }
         }
 
-
         // Draw
         window.clear();
         window.draw(chessTexture);
@@ -126,7 +129,7 @@ int main()
         if (showMoves) window.draw(movesTexture);
         window.display();
 
-//        sf::sleep(sf::milliseconds(40));
+        sf::sleep(sf::milliseconds(10));
     }
 
     return 0;
