@@ -126,7 +126,7 @@ int main()
         if (showMoves) window.draw(movesTexture);
         window.display();
 
-        sf::sleep(sf::milliseconds(40));
+//        sf::sleep(sf::milliseconds(40));
     }
 
     return 0;
