@@ -1,6 +1,7 @@
 #pragma once
 
 #include <iostream>
+#include <SFML/Window.hpp>
 #include <SFML/Window/VideoMode.hpp>
 
 enum PieceName {
@@ -25,7 +26,8 @@ const int windowHeight = sf::VideoMode::getDesktopMode().height;
 const float squareSize = windowWidth / 22.f;
 const float spaceBetweenFields = squareSize * 4;
 
-// For field's boarders
+
+// for field's boarders
 const float thickness = squareSize / 15.f;
 const float margin = thickness * 0.4f;
 
