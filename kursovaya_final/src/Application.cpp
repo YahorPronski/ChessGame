@@ -4,6 +4,8 @@
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
 
+#include <SFML/Audio.hpp>
+
 // Доделать:
 // Звуки
 // Рокировка
@@ -11,7 +13,6 @@
 // Проверка на мат
 // Добавить текстуры координаты доски
 // Превращение пешки
-
 // Взятие на проходе
 
 
@@ -116,7 +117,6 @@ int main()
                 }
             }
         }
-
 
         // Draw
         window.clear();
