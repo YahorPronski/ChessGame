@@ -6,7 +6,6 @@
 #include <vector>
 #include <SFML/System/Vector2.hpp>
 
-
 Square findSquareByCoordinates(Square** field, bool isLeftField, sf::Vector2i mousePosition);
 
 bool isCorrectClick(bool isLeftField, sf::Vector2i mousePosition);
