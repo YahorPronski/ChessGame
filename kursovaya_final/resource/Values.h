@@ -25,7 +25,7 @@ const int windowHeight = sf::VideoMode::getDesktopMode().height;
 const float squareSize = windowWidth / 22.f;
 const float spaceBetweenFields = squareSize * 4;
 
-// for field's boarders
+// For field's boarders
 const float thickness = squareSize / 15.f;
 const float margin = thickness * 0.4f;
 
