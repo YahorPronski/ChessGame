@@ -14,9 +14,9 @@ extern bool blackKingShortCastleAvailable;
 
 void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromSquare, Square toSquare);
 bool willBeCheck(Square** field, Square fromSquare, Square toSquare);
-bool isCheckMate(Square** field, PieceColor color);
+bool isCheck(Square** field, PieceColor kingColor);
+bool isStaleMate(Square** field, PieceColor kingColor);
+void transformPawn(Square** leftField, Square** rightField, bool isLeft, Square& square);
 
 void makeRookCastleMove(Square** leftField, Square** rightField, bool isLeft, Square kingFromSquare, Square kingToSquare);
 void updateCastlePossibility(Square fromSquare);
-
-

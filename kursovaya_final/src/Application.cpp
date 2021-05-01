@@ -178,11 +178,20 @@ int main()
                         chessTexture.load(leftField, rightField, container);
 
                         // Change action if mate
-                        if (isCheckMate(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
-                            if (isWhitesMove) {
-                                whiteWon = true;
+                        // Check for mate or stalemate (stalemate + check == mate)
+                        if (isStaleMate(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
+
+                            if (isCheck(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
+                                // Mate action
+                                if (isWhitesMove) {
+                                    whiteWon = true;
+                                }
+                                gameEnded = true;
+                            } else {
+                                // Stalemate action
+                                win.setString("Draw");
+                                gameEnded = true;
                             }
-                            gameEnded = true;
                         }
 
                         isLeftField = isLeftField ? false : true;

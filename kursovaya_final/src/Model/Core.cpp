@@ -9,6 +9,11 @@ bool blackKingShortCastleAvailable = true;
 
 void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromSquare, Square toSquare) {
 
+    // Checking for pawn transformation
+    if (fromSquare.pieceName == PAWN && toSquare.i == 0) {
+        transformPawn(leftField, rightField, isLeft, fromSquare);
+    }
+
     // Updating castle possibility
     updateCastlePossibility(fromSquare);
 
@@ -57,6 +62,28 @@ void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromS
 
 }
 
+void transformPawn(Square** leftField, Square** rightField, bool isLeft, Square& fromSquare) {
+
+    fromSquare.pieceName = QUEEN;
+
+    short tmpI = isLeft ? fromSquare.i : (short)(7 - fromSquare.i);
+    short tmpJ = isLeft ? fromSquare.j : (short)(7 - fromSquare.j);
+
+    leftField[tmpI][tmpJ].pieceName = QUEEN;
+    leftField[tmpI][tmpJ].pieceColor = fromSquare.pieceColor;
+    leftField[tmpI][tmpJ].i = tmpI;
+    leftField[tmpI][tmpJ].j = tmpJ;
+
+    tmpI = !isLeft ? fromSquare.i : (short)(7 - fromSquare.i);
+    tmpJ = !isLeft ? fromSquare.j : (short)(7 - fromSquare.j);
+
+    rightField[tmpI][tmpJ].pieceName = QUEEN;
+    rightField[tmpI][tmpJ].pieceColor = fromSquare.pieceColor;
+    rightField[tmpI][tmpJ].i = tmpI;
+    rightField[tmpI][tmpJ].j = tmpJ;
+
+}
+
 void updateCastlePossibility(Square fromSquare) {
     if (fromSquare.pieceColor == WHITE) {
         if (fromSquare.pieceName == KING) {
@@ -88,7 +115,7 @@ void makeRookCastleMove(Square** leftField, Square** rightField, bool isLeft, Sq
             rookFromSquarePosJ = (short)(kingFromSquare.j - 4);
             rookToSquarePosJ = (short)(kingFromSquare.j - 1);
         }
-        // Short white castle
+            // Short white castle
         else {
             rookFromSquarePosJ = (short)(kingFromSquare.j + 3);
             rookToSquarePosJ = (short)(kingFromSquare.j + 1);
@@ -99,7 +126,7 @@ void makeRookCastleMove(Square** leftField, Square** rightField, bool isLeft, Sq
             rookFromSquarePosJ = (short)(kingFromSquare.j - 3);
             rookToSquarePosJ = (short)(kingFromSquare.j - 1);
         }
-        // Long black castle
+            // Long black castle
         else {
             rookFromSquarePosJ = (short)(kingFromSquare.j + 4);
             rookToSquarePosJ = (short)(kingFromSquare.j + 1);
@@ -112,7 +139,9 @@ void makeRookCastleMove(Square** leftField, Square** rightField, bool isLeft, Sq
 
 }
 
-bool isCheckMate(Square** field, PieceColor color) {
+
+
+bool isStaleMate(Square** field, PieceColor color) {
     bool isMate = true;
     for (short i = 0; i < 8; i++) {
         for (short j = 0; j < 8; j++) {
@@ -129,19 +158,7 @@ bool isCheckMate(Square** field, PieceColor color) {
     return isMate;
 }
 
-bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
-
-    // For example we did this move (then we need to change it back!!!!)
-    field[fromSquare.i][fromSquare.j].pieceName = NO_PIECE;
-    field[fromSquare.i][fromSquare.j].pieceColor = NO_COLOR;
-    field[fromSquare.i][fromSquare.j].colorOfSquare = fromSquare.colorOfSquare;
-
-    field[toSquare.i][toSquare.j].pieceName = fromSquare.pieceName;
-    field[toSquare.i][toSquare.j].pieceColor = fromSquare.pieceColor;
-    field[toSquare.i][toSquare.j].colorOfSquare = toSquare.colorOfSquare;
-
-    // Get color of king
-    PieceColor kingColor = fromSquare.pieceColor;
+bool isCheck(Square** field, PieceColor kingColor) {
 
     // Find king of required color
     bool wasFound = false;
@@ -173,9 +190,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == BISHOP) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -195,9 +209,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == BISHOP) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -217,9 +228,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == BISHOP) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -239,9 +247,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == BISHOP) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -262,9 +267,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == ROOK) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -283,9 +285,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == ROOK) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -305,9 +304,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == ROOK) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -326,9 +322,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         else {
             if (field[tmpI][tmpJ].pieceName == QUEEN ||
                 field[tmpI][tmpJ].pieceName == ROOK) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             } else if (field[tmpI][tmpJ].pieceColor != NO_COLOR){
                 break;
@@ -339,14 +332,14 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
 
     // Knight moves
     short knightMoves[8][2] {
-        {1, 2},
-        {2, 1},
-        {2, -1},
-        {1, -2},
-        {-1, -2},
-        {-2, -1},
-        {-2, 1},
-        {-1, 2}
+            {1, 2},
+            {2, 1},
+            {2, -1},
+            {1, -2},
+            {-1, -2},
+            {-2, -1},
+            {-2, 1},
+            {-1, 2}
     };
 
     for (auto & move : knightMoves) {
@@ -357,9 +350,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
             if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
                 (field[tmpI][tmpJ].pieceName == KNIGHT)) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             }
         }
@@ -367,14 +357,14 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
 
     // King moves
     short kingMoves[8][2] {
-        {1, 1},
-        {-1, -1},
-        {-1, 1},
-        {1, -1},
-        {1, 0},
-        {0, 1},
-        {-1, 0},
-        {0, -1}
+            {1, 1},
+            {-1, -1},
+            {-1, 1},
+            {1, -1},
+            {1, 0},
+            {0, 1},
+            {-1, 0},
+            {0, -1}
     };
 
     for (auto & move : kingMoves) {
@@ -385,9 +375,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
         if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
             if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
                 (field[tmpI][tmpJ].pieceName == KING)) {
-
-                field[fromSquare.i][fromSquare.j] = fromSquare;
-                field[toSquare.i][toSquare.j] = toSquare;
                 return true;
             }
         }
@@ -399,9 +386,6 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
         if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
             (field[tmpI][tmpJ].pieceName == PAWN)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
             return true;
         }
     }
@@ -411,14 +395,27 @@ bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
     if (tmpI >= 0 && tmpI < 8 && tmpJ >= 0 && tmpJ < 8) {
         if (field[tmpI][tmpJ].pieceColor != kingSquare.pieceColor &&
             (field[tmpI][tmpJ].pieceName == PAWN)) {
-
-            field[fromSquare.i][fromSquare.j] = fromSquare;
-            field[toSquare.i][toSquare.j] = toSquare;
             return true;
         }
     }
 
+    return false;
+}
+
+bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
+
+    // For example we did this move (then we need to change it back!!!!)
+    field[fromSquare.i][fromSquare.j].pieceName = NO_PIECE;
+    field[fromSquare.i][fromSquare.j].pieceColor = NO_COLOR;
+    field[fromSquare.i][fromSquare.j].colorOfSquare = fromSquare.colorOfSquare;
+
+    field[toSquare.i][toSquare.j].pieceName = fromSquare.pieceName;
+    field[toSquare.i][toSquare.j].pieceColor = fromSquare.pieceColor;
+    field[toSquare.i][toSquare.j].colorOfSquare = toSquare.colorOfSquare;
+
+    bool willBeCheck = isCheck(field, fromSquare.pieceColor);
     field[fromSquare.i][fromSquare.j] = fromSquare;
     field[toSquare.i][toSquare.j] = toSquare;
-    return false;
+
+    return willBeCheck;
 }
