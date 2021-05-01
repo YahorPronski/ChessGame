@@ -1,8 +1,22 @@
 #include "../../Headers/Model/Moves.h"
 
+bool whiteKingLongCastleAvailable = true;
+bool whiteKingShortCastleAvailable = true;
+
+bool blackKingLongCastleAvailable = true;
+bool blackKingShortCastleAvailable = true;
+
 void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromSquare, Square toSquare) {
 
-    // Change left field
+    // Updating castle possibility
+    updateCastlePossibility(fromSquare);
+
+    // If castle then move rook too
+    if (fromSquare.pieceName == KING && abs(fromSquare.j - toSquare.j) == 2) {
+        makeRookCastleMove(leftField, rightField, isLeft, fromSquare, toSquare);
+    }
+
+    // Changing left field
     short tmpI = isLeft ? fromSquare.i : (short)(7 - fromSquare.i);
     short tmpJ = isLeft ? fromSquare.j : (short)(7 - fromSquare.j);
 
@@ -21,7 +35,7 @@ void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromS
     leftField[tmpI][tmpJ].i = tmpI;
     leftField[tmpI][tmpJ].j = tmpJ;
 
-    // Change right field
+    // Changing right field
     tmpI = !isLeft ? fromSquare.i : (short)(7 - fromSquare.i);
     tmpJ = !isLeft ? fromSquare.j : (short)(7 - fromSquare.j);
 
@@ -39,6 +53,62 @@ void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromS
     rightField[tmpI][tmpJ].colorOfSquare = toSquare.colorOfSquare;
     leftField[tmpI][tmpJ].i = tmpI;
     leftField[tmpI][tmpJ].j = tmpJ;
+
+}
+
+void updateCastlePossibility(Square fromSquare) {
+    if (fromSquare.pieceColor == WHITE) {
+        if (fromSquare.pieceName == KING) {
+            whiteKingShortCastleAvailable = false;
+            whiteKingLongCastleAvailable = false;
+        } else if (fromSquare.pieceName == ROOK) {
+            if (fromSquare.j == 7) whiteKingShortCastleAvailable = false;
+            else whiteKingLongCastleAvailable = false;
+        }
+    } else if (fromSquare.pieceColor == BLACK) {
+        if (fromSquare.pieceName == KING) {
+            blackKingShortCastleAvailable = false;
+            blackKingLongCastleAvailable = false;
+        } else if (fromSquare.pieceName == ROOK) {
+            if (fromSquare.j == 7) blackKingLongCastleAvailable = false;
+            else blackKingShortCastleAvailable = false;
+        }
+    }
+}
+
+void makeRookCastleMove(Square** leftField, Square** rightField, bool isLeft, Square kingFromSquare, Square kingToSquare){
+
+    short rookFromSquarePosJ;
+    short rookToSquarePosJ;
+
+    if (kingFromSquare.pieceColor == WHITE) {
+        // Long white castle
+        if (kingFromSquare.j - kingToSquare.j > 0) {
+            rookFromSquarePosJ = (short)(kingFromSquare.j - 4);
+            rookToSquarePosJ = (short)(kingFromSquare.j - 1);
+        }
+        // Short white castle
+        else {
+            rookFromSquarePosJ = (short)(kingFromSquare.j + 3);
+            rookToSquarePosJ = (short)(kingFromSquare.j + 1);
+        }
+    } else {
+        // Short black castle
+        if (kingFromSquare.j - kingToSquare.j > 0) {
+            rookFromSquarePosJ = (short)(kingFromSquare.j - 3);
+            rookToSquarePosJ = (short)(kingFromSquare.j - 1);
+        }
+        // Long black castle
+        else {
+            rookFromSquarePosJ = (short)(kingFromSquare.j + 4);
+            rookToSquarePosJ = (short)(kingFromSquare.j + 1);
+        }
+    }
+
+    Square rookFromSquare = isLeft ? leftField[kingFromSquare.i][rookFromSquarePosJ] : rightField[kingFromSquare.i][rookFromSquarePosJ];
+    Square rookToSquare = isLeft ? leftField[kingFromSquare.i][rookToSquarePosJ] : rightField[kingFromSquare.i][rookToSquarePosJ];
+    makeMove(leftField, rightField, isLeft, rookFromSquare, rookToSquare);
+
 }
 
 bool willBeCheck(Square** field, Square fromSquare, Square toSquare) {
@@ -603,7 +673,7 @@ std::vector<sf::Vector2<short>> findKingMoves(Square** field, Square square) {
 		auto tmpI = (short)(square.i + move[0]);
 		auto tmpJ = (short)(square.j + move[1]);
 
-		if (tmpI < 8 && tmpI >= 0 && tmpJ >= 0 && tmpJ < 8) { 
+		if (tmpI < 8 && tmpI >= 0 && tmpJ >= 0 && tmpJ < 8) {
 
 			if (field[tmpI][tmpJ].pieceColor != square.pieceColor) {
                 if (!willBeCheck(field, square, field[tmpI][tmpJ])) {
@@ -612,6 +682,44 @@ std::vector<sf::Vector2<short>> findKingMoves(Square** field, Square square) {
             }
 		}
 	}
+
+	// Checking for castle possibility
+
+	PieceColor currentKingColor = square.pieceColor;
+    auto tmpI = (short) (square.i);
+    auto tmpJ = (short) (square.j);
+
+    // Long castle
+    short betweenJ = currentKingColor == BLACK ? 1 : -1;
+    short newKingPosJ = currentKingColor == BLACK ? 2 : -2;
+    short aboveRookPosJ = currentKingColor == BLACK ? 3 : -3;
+
+    if ((currentKingColor == WHITE && whiteKingLongCastleAvailable) || (currentKingColor == BLACK && blackKingLongCastleAvailable)) {
+        if (field[tmpI][tmpJ + betweenJ].pieceColor == NO_COLOR &&
+        field[tmpI][tmpJ + newKingPosJ].pieceColor == NO_COLOR &&
+        field[tmpI][tmpJ + aboveRookPosJ].pieceColor == NO_COLOR) {
+
+            if (!willBeCheck(field, square, field[tmpI][tmpJ + betweenJ]) &&
+            !willBeCheck(field, square, field[tmpI][tmpJ + newKingPosJ])) {
+                coordinates.insert(coordinates.end(), sf::Vector2<short>(tmpJ + newKingPosJ, tmpI));
+            }
+        }
+    }
+
+    // Short castle
+    betweenJ = currentKingColor == WHITE ? 1 : -1;
+    newKingPosJ = currentKingColor == WHITE ? 2 : -2;
+
+    if ((currentKingColor == WHITE && whiteKingShortCastleAvailable) || (currentKingColor == BLACK && blackKingShortCastleAvailable)) {
+        if (field[tmpI][tmpJ + betweenJ].pieceColor == NO_COLOR &&
+        field[tmpI][tmpJ + newKingPosJ].pieceColor == NO_COLOR) {
+
+            if (!willBeCheck(field, square, field[tmpI][tmpJ + betweenJ]) &&
+            !willBeCheck(field, square, field[tmpI][tmpJ + newKingPosJ])) {
+                coordinates.insert(coordinates.end(), sf::Vector2<short>(tmpJ + newKingPosJ, tmpI));
+            }
+        }
+    }
 
 	return coordinates;
 }

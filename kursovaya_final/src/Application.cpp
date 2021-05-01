@@ -56,11 +56,8 @@ int main()
         }
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
-//            sf::Music music;
-//            if (!music.openFromFile("resource//Lab3_Vadim.wav"))
-//              return -1; // error
-//            music.play();
-              sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+
+            sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
 
             currentField = isLeftField ? leftField : rightField;
 
