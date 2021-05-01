@@ -89,8 +89,18 @@ int main()
 
                     chessTexture.load(leftField, rightField, container);
 
-                    // Change action if mate
-                    if (isCheckMate(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) std::cout<<"Mate!!!" << std::endl;
+                    // Check for mate or stalemate (stalemate + check == mate)
+                    if (isStaleMate(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
+
+                        if (isCheck(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
+                            // Mate action
+                            std::cout << "Mate!!!" << std::endl;
+                        } else {
+                            // Stalemate action
+                            std::cout << "Stalemate!!!" << std::endl;
+                        }
+
+                    }
 
                     isLeftField = isLeftField ? false : true;
                     firstClickAccess = true;
