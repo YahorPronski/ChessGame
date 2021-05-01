@@ -71,20 +71,21 @@ int main()
     if (!myFont.loadFromFile(font)) {
         throw "Flaj";
     }
+    int whiteCountdown = 300;
+    int blackCountdown = 300;
+
     sf::Text whiteTimer;
     whiteTimer.setFont(myFont);
     whiteTimer.setPosition(squareSize * 4, squareSize * 10.5);
-    whiteTimer.setString("5:00");
+    whiteTimer.setString(timeFormat(whiteCountdown));
     whiteTimer.setScale(2.5, 2.5);
     sf::Text blackTimer;
     blackTimer.setFont(myFont);
     blackTimer.setScale(2.5, 2.5);
     blackTimer.setPosition(squareSize * 16, squareSize * 10.5);
-    blackTimer.setString("5:00");
+    blackTimer.setString(timeFormat(blackCountdown));
     sf::Clock clock;
 
-    int whiteCountdown = 300;
-    int blackCountdown = 300;
     // Run the main loop
     while (window.isOpen())
     {
@@ -224,7 +225,7 @@ int main()
             restartText.setFont(myFont);
             restartText.setString("Restart");
             restartText.setScale(2.0, 2.0);
-            restartText.setPosition(squareSize*10, squareSize * 11);
+            restartText.setPosition(squareSize*10 + squareSize / 5, squareSize * 11);
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
                 if (restart.isSelected(mousePosition)) {
