@@ -228,7 +228,9 @@ int main()
             }
         } else {
             win.setFont(myFont);
-            win.setString(whiteWon ? "White won" : "Black won");
+            if (win.getString() == "") {
+                win.setString(whiteWon ? "White won" : "Black won");
+            }
             win.setScale(3.0, 3.0);
             win.setPosition(squareSize * 10, squareSize * 10);
             restartText.setFont(myFont);
