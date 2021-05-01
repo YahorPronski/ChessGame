@@ -1,5 +1,6 @@
 ﻿#include "../Headers/Model/Data.h"
-#include "../Headers/Model/Moves.h"
+#include "../Headers/Model/Core.h"
+#include "../Headers/Model/MovesFinders.h"
 #include "../Headers/ViewModel/OnClickHandling.h"
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
@@ -89,6 +90,9 @@ int main()
 
                     chessTexture.load(leftField, rightField, container);
 
+                    // Change action if mate
+                    if (isCheckMate(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) std::cout<<"Mate!!!" << std::endl;
+
                     isLeftField = isLeftField ? false : true;
                     firstClickAccess = true;
 
@@ -117,6 +121,7 @@ int main()
                     firstClickAccess = true;
                 }
             }
+
         }
 
         // Draw
