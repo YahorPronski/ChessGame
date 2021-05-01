@@ -4,8 +4,10 @@
 #include "../Headers/ViewModel/OnClickHandling.h"
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
+#include <string>
 
 #include <SFML/Audio.hpp>
+#include <sstream>
 
 // Доделать:
 // Звуки
@@ -16,6 +18,14 @@
 // Превращение пешки
 // Взятие на проходе
 
+std::string timeFormat(int time) {
+    std::stringstream ss;
+    ss << time/ 60 << ":" << time % 60;
+    if (time % 60 == 0) {
+        ss << 0;
+    }
+    return ss.str();
+}
 
 int main()
 {
@@ -28,6 +38,8 @@ int main()
     bool firstClickAccess = true;
     bool isLeftField = true;
     bool showMoves = false;
+    bool gameStarted = false;
+    bool isWhitesMove = true;
 
     Options options;
     TextureCoordinatesContainer container;
@@ -46,9 +58,28 @@ int main()
     if (!coordsTexture.load()) return -1;
     if (!fieldBordersTexture.load()) return -1;
 
+    sf::Font myFont;
+    if (!myFont.loadFromFile(font)) {
+        throw "Flaj";
+    }
+    sf::Text whiteTimer;
+    whiteTimer.setFont(myFont);
+    whiteTimer.setPosition(squareSize * 4, squareSize * 10.5);
+    whiteTimer.setString("5:00");
+    whiteTimer.setScale(2.5, 2.5);
+    sf::Text blackTimer;
+    blackTimer.setFont(myFont);
+    blackTimer.setScale(2.5, 2.5);
+    blackTimer.setPosition(squareSize * 16, squareSize * 10.5);
+    blackTimer.setString("5:00");
+    sf::Clock clock;
+
+    int whiteCountdown = 300;
+    int blackCountdown = 300;
     // Run the main loop
     while (window.isOpen())
     {
+        double elapsed = clock.getElapsedTime().asSeconds();
         // Handle exit event
         sf::Event event;
         while (window.pollEvent(event))
@@ -56,11 +87,52 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+        if (gameStarted) {
+            if (clock.getElapsedTime().asSeconds() > 1) {
+                if (isWhitesMove) {
+                    whiteCountdown--;
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                    clock.restart();
+                } else {
+                    blackCountdown--;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    clock.restart();
+                }
+            }
+        }
 
         if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
             sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-
+            //Button checking
+            if (!gameStarted) {
+                if (options.oneMinute.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 60;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                } else if (options.twoMinutes.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 120;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                } else if (options.threeMinutes.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 180;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                } else if (options.fiveMinutes.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 300;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                } else if (options.tenMinutes.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 600;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                } else if (options.fifteenMinutes.isSelected(mousePosition)) {
+                    whiteCountdown = blackCountdown = 900;
+                    blackTimer.setString(timeFormat(blackCountdown));
+                    whiteTimer.setString(timeFormat(whiteCountdown));
+                }
+            }
+            //
             currentField = isLeftField ? leftField : rightField;
 
             if (firstClickAccess) {
@@ -95,7 +167,9 @@ int main()
 
                     isLeftField = isLeftField ? false : true;
                     firstClickAccess = true;
-
+                    //timer.stop
+                    gameStarted = true;
+                    isWhitesMove = !isWhitesMove;
                 }
                 else if (isCorrectClick(isLeftField, mousePosition)) {
 
@@ -130,6 +204,8 @@ int main()
         window.draw(coordsTexture);
         window.draw(fieldBordersTexture);
         window.draw(options);
+        window.draw(whiteTimer);
+        window.draw(blackTimer);
         if (showMoves) window.draw(movesTexture);
         window.display();
 
@@ -138,3 +214,5 @@ int main()
 
     return 0;
 }
+
+
