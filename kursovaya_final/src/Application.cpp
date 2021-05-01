@@ -96,7 +96,7 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        if (gameStarted) {
+        if (gameStarted && !gameEnded) {
             if (clock.getElapsedTime().asSeconds() > 1) {
                 if (whiteCountdown <= 0 || blackCountdown <= 0) {
                     gameEnded = true;
