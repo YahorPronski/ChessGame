@@ -24,7 +24,7 @@ const int windowWidth = sf::VideoMode::getDesktopMode().width;
 const int windowHeight = sf::VideoMode::getDesktopMode().height;
 
 const float squareSize = windowWidth / 22.f;
-const float spaceBetweenFields = squareSize * 2;
+const float spaceBetweenFields = squareSize * 4;
 
 
 // for field's boarders
@@ -35,3 +35,4 @@ const float fileSquareSize = 250;
 
 const std::string textureFilePath = "resource//chess.png";
 const std::string coordsTextureFilePath = "resource//coords_texture.jpg";
+const std::string font = "resource//terminal.otf";

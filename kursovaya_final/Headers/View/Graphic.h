@@ -1,7 +1,8 @@
 #pragma once
 
 #include "../../Headers/Model/Data.h"
-
+#include "Button.hpp"
+#include "../../resource/Values.h"
 #include <SFML/Graphics.hpp>
 
 class ChessTexture : public sf::Drawable, public sf::Transformable
@@ -200,6 +201,68 @@ private:
 
     sf::VertexArray vertices;
     sf::Texture texture;
+};
+
+class Options: public sf::Drawable {
+public:
+    Button oneMinute = Button(10*squareSize, squareSize * 1.5, squareSize * 2, squareSize);
+    Button twoMinutes = Button(10*squareSize, squareSize * 2.75, squareSize * 2, squareSize);
+    Button threeMinutes = Button(10*squareSize, squareSize * 4, squareSize * 2, squareSize);
+    Button fiveMinutes = Button(10*squareSize, squareSize * 5.25, squareSize * 2, squareSize);
+    Button tenMinutes = Button(10*squareSize, squareSize * 6.5, squareSize * 2, squareSize);
+    Button fifteenMinutes = Button(10*squareSize, squareSize * 7.75, squareSize * 2, squareSize);
+private:
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
+    {
+        sf::Font myFont;
+        if (!myFont.loadFromFile(font)) {
+            throw "Can't load";
+        }
+        // one minute
+        sf::Text one;
+        one.setString("1 minute");
+        one.setPosition(10 * squareSize + squareSize / 8, squareSize * 1.5 + squareSize / 4);
+        one.scale(1.9, 1.9);
+        one.setFont(myFont);
+        // 2 minutes
+        sf::Text two;
+        two.setString("2 minutes");
+        two.setPosition(10 * squareSize + squareSize / 8, squareSize * 2.75 + squareSize / 4);
+        two.scale(1.9, 1.9);
+        two.setFont(myFont);
+        // 3 minutes
+        sf::Text three;
+        three.setString("3 minutes");
+        three.setPosition(10 * squareSize + squareSize / 8, squareSize * 4 + squareSize / 4);
+        three.scale(1.9, 1.9);
+        three.setFont(myFont);
+        // 5
+        sf::Text five = three;
+        five.setString("5 minutes");
+        five.setPosition(10 * squareSize + squareSize / 8, squareSize * 5.25 + squareSize / 4);
+        //10
+        sf::Text ten = three;
+        ten.setString("10 minutes");
+        ten.setPosition(10 * squareSize + squareSize / 8, squareSize * 6.5 + squareSize / 4);
+        // 15
+        sf::Text fifteen = three;
+        fifteen.setString("15 minutes");
+        fifteen.setPosition(10 * squareSize + squareSize / 8, squareSize * 7.75 + squareSize / 4);
+        //
+        target.draw(oneMinute.displayButton());
+        target.draw(twoMinutes.displayButton());
+        target.draw(threeMinutes.displayButton());
+        target.draw(fiveMinutes.displayButton());
+        target.draw(tenMinutes.displayButton());
+        target.draw(fifteenMinutes.displayButton());
+        //drawing text
+        target.draw(one);
+        target.draw(two);
+        target.draw(three);
+        target.draw(five);
+        target.draw(ten);
+        target.draw(fifteen);
+    }
 };
 
 class BordersTexture : public sf::Drawable, public sf::Transformable

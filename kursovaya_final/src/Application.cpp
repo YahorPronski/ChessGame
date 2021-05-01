@@ -28,6 +28,7 @@ int main()
     bool isLeftField = true;
     bool showMoves = false;
 
+    Options options;
     TextureCoordinatesContainer container;
     std::vector<sf::Vector2<short>> currentMoves;
     Square** currentField;
@@ -123,6 +124,7 @@ int main()
         window.draw(chessTexture);
         window.draw(coordsTexture);
         window.draw(fieldBordersTexture);
+        window.draw(options);
         if (showMoves) window.draw(movesTexture);
         window.display();
 
