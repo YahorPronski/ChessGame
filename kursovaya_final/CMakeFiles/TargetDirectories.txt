@@ -1,0 +1,3 @@
+C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/CMakeFiles/kursovaya_final.dir
+C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/CMakeFiles/edit_cache.dir
+C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/CMakeFiles/rebuild_cache.dir

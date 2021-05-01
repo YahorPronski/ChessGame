@@ -169,6 +169,33 @@ src/Application.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Application.cpp.s
 .PHONY : src/Application.cpp.s
 
+src/Model/Core.obj: src/Model/Core.cpp.obj
+
+.PHONY : src/Model/Core.obj
+
+# target to build an object file
+src/Model/Core.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Core.cpp.obj
+.PHONY : src/Model/Core.cpp.obj
+
+src/Model/Core.i: src/Model/Core.cpp.i
+
+.PHONY : src/Model/Core.i
+
+# target to preprocess a source file
+src/Model/Core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Core.cpp.i
+.PHONY : src/Model/Core.cpp.i
+
+src/Model/Core.s: src/Model/Core.cpp.s
+
+.PHONY : src/Model/Core.s
+
+# target to generate assembly for a file
+src/Model/Core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Core.cpp.s
+.PHONY : src/Model/Core.cpp.s
+
 src/Model/Data.obj: src/Model/Data.cpp.obj
 
 .PHONY : src/Model/Data.obj
@@ -196,32 +223,32 @@ src/Model/Data.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Data.cpp.s
 .PHONY : src/Model/Data.cpp.s
 
-src/Model/Moves.obj: src/Model/Moves.cpp.obj
+src/Model/MovesFinders.obj: src/Model/MovesFinders.cpp.obj
 
-.PHONY : src/Model/Moves.obj
+.PHONY : src/Model/MovesFinders.obj
 
 # target to build an object file
-src/Model/Moves.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Moves.cpp.obj
-.PHONY : src/Model/Moves.cpp.obj
+src/Model/MovesFinders.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/MovesFinders.cpp.obj
+.PHONY : src/Model/MovesFinders.cpp.obj
 
-src/Model/Moves.i: src/Model/Moves.cpp.i
+src/Model/MovesFinders.i: src/Model/MovesFinders.cpp.i
 
-.PHONY : src/Model/Moves.i
+.PHONY : src/Model/MovesFinders.i
 
 # target to preprocess a source file
-src/Model/Moves.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Moves.cpp.i
-.PHONY : src/Model/Moves.cpp.i
+src/Model/MovesFinders.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/MovesFinders.cpp.i
+.PHONY : src/Model/MovesFinders.cpp.i
 
-src/Model/Moves.s: src/Model/Moves.cpp.s
+src/Model/MovesFinders.s: src/Model/MovesFinders.cpp.s
 
-.PHONY : src/Model/Moves.s
+.PHONY : src/Model/MovesFinders.s
 
 # target to generate assembly for a file
-src/Model/Moves.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/Moves.cpp.s
-.PHONY : src/Model/Moves.cpp.s
+src/Model/MovesFinders.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\kursovaya_final.dir\build.make CMakeFiles/kursovaya_final.dir/src/Model/MovesFinders.cpp.s
+.PHONY : src/Model/MovesFinders.cpp.s
 
 src/ViewModel/OnClickHandling.obj: src/ViewModel/OnClickHandling.cpp.obj
 
@@ -262,12 +289,15 @@ help:
 	@echo ... src/Application.obj
 	@echo ... src/Application.i
 	@echo ... src/Application.s
+	@echo ... src/Model/Core.obj
+	@echo ... src/Model/Core.i
+	@echo ... src/Model/Core.s
 	@echo ... src/Model/Data.obj
 	@echo ... src/Model/Data.i
 	@echo ... src/Model/Data.s
-	@echo ... src/Model/Moves.obj
-	@echo ... src/Model/Moves.i
-	@echo ... src/Model/Moves.s
+	@echo ... src/Model/MovesFinders.obj
+	@echo ... src/Model/MovesFinders.i
+	@echo ... src/Model/MovesFinders.s
 	@echo ... src/ViewModel/OnClickHandling.obj
 	@echo ... src/ViewModel/OnClickHandling.i
 	@echo ... src/ViewModel/OnClickHandling.s

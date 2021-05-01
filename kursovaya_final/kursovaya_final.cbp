@@ -84,10 +84,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/Headers/Model/Core.h">
+			<Option target="kursovaya_final"/>
+		</Unit>
 		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/Headers/Model/Data.h">
 			<Option target="kursovaya_final"/>
 		</Unit>
-		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/Headers/Model/Moves.h">
+		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/Headers/Model/MovesFinders.h">
 			<Option target="kursovaya_final"/>
 		</Unit>
 		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/Headers/Model/TextureCoordinatesContainer.h">
@@ -105,10 +108,13 @@
 		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/Application.cpp">
 			<Option target="kursovaya_final"/>
 		</Unit>
+		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/Model/Core.cpp">
+			<Option target="kursovaya_final"/>
+		</Unit>
 		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/Model/Data.cpp">
 			<Option target="kursovaya_final"/>
 		</Unit>
-		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/Model/Moves.cpp">
+		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/Model/MovesFinders.cpp">
 			<Option target="kursovaya_final"/>
 		</Unit>
 		<Unit filename="C:/Users/groza/CLionProjects/Chess-for-one-PC/kursovaya_final/src/ViewModel/OnClickHandling.cpp">
