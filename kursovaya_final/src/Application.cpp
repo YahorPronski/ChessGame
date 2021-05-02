@@ -46,6 +46,7 @@ int main()
     bool isWhitesMove = true;
     bool gameEnded = false;
     bool whiteWon;
+    bool addFiveSeconds = false;
 
     Options options;
     TextureCoordinatesContainer container;
@@ -119,32 +120,48 @@ int main()
         if (!gameEnded) {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                //Button checking
+                //Button checking(game time selected)
                 if (!gameStarted) {
                     if (options.oneMinute.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 60;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.twoMinutes.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 120;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.threeMinutes.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 180;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.fiveMinutes.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 300;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.tenMinutes.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 600;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.fifteenMinutes.isSelected(mousePosition)) {
                         whiteCountdown = blackCountdown = 900;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
+                    } else if (options.fivePlusFive.isSelected(mousePosition)) {
+                        whiteCountdown = blackCountdown = 300;
+                        blackTimer.setString(timeFormat(blackCountdown));
+                        whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = true;
+                    } else if (options.fifteenPlusFive.isSelected(mousePosition)) {
+                        whiteCountdown = blackCountdown = 900;
+                        blackTimer.setString(timeFormat(blackCountdown));
+                        whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = true;
                     }
                 }
                 //
@@ -198,6 +215,15 @@ int main()
                         firstClickAccess = true;
                         //timer.stop
                         gameStarted = true;
+                        if (addFiveSeconds && gameStarted) {
+                            if (!isWhitesMove) {
+                                blackCountdown += 5;
+                                blackTimer.setString(timeFormat(blackCountdown));
+                            } else {
+                                whiteCountdown += 5;
+                                whiteTimer.setString(timeFormat(whiteCountdown));
+                            }
+                        }
                         isWhitesMove = !isWhitesMove;
                     }
                     else if (isCorrectClick(isLeftField, mousePosition)) {

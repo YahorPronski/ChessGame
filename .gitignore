@@ -9,3 +9,7 @@ CMakeFile
 */kursovaya_final.cbp
 */kursovaya_final.exe
 */Makefile
+.idea/
+kursovaya_final/CMakeFiles/
+kursovaya_final/Project.cbp
+kursovaya_final/kursovaya_final

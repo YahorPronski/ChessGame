@@ -205,12 +205,14 @@ private:
 
 class Options: public sf::Drawable {
 public:
-    Button oneMinute = Button(10*squareSize, squareSize * 1.5, squareSize * 2, squareSize);
-    Button twoMinutes = Button(10*squareSize, squareSize * 2.75, squareSize * 2, squareSize);
-    Button threeMinutes = Button(10*squareSize, squareSize * 4, squareSize * 2, squareSize);
-    Button fiveMinutes = Button(10*squareSize, squareSize * 5.25, squareSize * 2, squareSize);
-    Button tenMinutes = Button(10*squareSize, squareSize * 6.5, squareSize * 2, squareSize);
-    Button fifteenMinutes = Button(10*squareSize, squareSize * 7.75, squareSize * 2, squareSize);
+    Button oneMinute = Button(10*squareSize, squareSize * 1.5, squareSize * 2, squareSize * 0.75);
+    Button twoMinutes = Button(10*squareSize, squareSize * 2.25, squareSize * 2, squareSize * 0.75);
+    Button threeMinutes = Button(10*squareSize, squareSize * 3, squareSize * 2, squareSize * 0.75);
+    Button fiveMinutes = Button(10*squareSize, squareSize * 3.75, squareSize * 2, squareSize * 0.75);
+    Button tenMinutes = Button(10*squareSize, squareSize * 4.5, squareSize * 2, squareSize * 0.75);
+    Button fifteenMinutes = Button(10*squareSize, squareSize * 5.25, squareSize * 2, squareSize * 0.75);
+    Button fivePlusFive = Button(10*squareSize, squareSize * 6, squareSize * 2, squareSize * 0.75);
+    Button fifteenPlusFive = Button(10*squareSize, squareSize * 6.75, squareSize * 2, squareSize * 0.75);
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
@@ -222,32 +224,41 @@ private:
         sf::Text one;
         one.setString("1 minute");
         one.setPosition(10 * squareSize + squareSize / 8, squareSize * 1.5 + squareSize / 4);
-        one.scale(1.9, 1.9);
+        one.setCharacterSize(squareSize * 0.35);
         one.setFont(myFont);
         // 2 minutes
         sf::Text two;
         two.setString("2 minutes");
-        two.setPosition(10 * squareSize + squareSize / 8, squareSize * 2.75 + squareSize / 4);
-        two.scale(1.9, 1.9);
+        two.setPosition(10 * squareSize + squareSize / 8, squareSize * 2.25 + squareSize / 4);
+        two.setCharacterSize(squareSize * 0.35);
         two.setFont(myFont);
         // 3 minutes
         sf::Text three;
         three.setString("3 minutes");
-        three.setPosition(10 * squareSize + squareSize / 8, squareSize * 4 + squareSize / 4);
-        three.scale(1.9, 1.9);
+        three.setCharacterSize(squareSize * 0.35);
+        three.setPosition(10 * squareSize + squareSize / 8, squareSize * 3 + squareSize / 4);
+//        three.scale(1.9, 1.9);
         three.setFont(myFont);
         // 5
         sf::Text five = three;
         five.setString("5 minutes");
-        five.setPosition(10 * squareSize + squareSize / 8, squareSize * 5.25 + squareSize / 4);
+        five.setPosition(10 * squareSize + squareSize / 8, squareSize * 3.75 + squareSize / 4);
         //10
         sf::Text ten = three;
         ten.setString("10 minutes");
-        ten.setPosition(10 * squareSize + squareSize / 8, squareSize * 6.5 + squareSize / 4);
+        ten.setPosition(10 * squareSize + squareSize / 8, squareSize * 4.5 + squareSize / 4);
         // 15
         sf::Text fifteen = three;
         fifteen.setString("15 minutes");
-        fifteen.setPosition(10 * squareSize + squareSize / 8, squareSize * 7.75 + squareSize / 4);
+        fifteen.setPosition(10 * squareSize + squareSize / 8, squareSize * 5.25 + squareSize / 4);
+        // 5 | 5
+        sf::Text fivePlusFiveMin = three;
+        fivePlusFiveMin.setString("5 | 5 min.");
+        fivePlusFiveMin.setPosition(10 * squareSize + squareSize / 8, squareSize * 6 + squareSize / 4);
+        // 15 | 5
+        sf::Text fifteenPlusFiveMin = three;
+        fifteenPlusFiveMin.setString("15 | 5 min.");
+        fifteenPlusFiveMin.setPosition(10 * squareSize + squareSize / 8, squareSize * 6.75 + squareSize / 4);
         //
         target.draw(oneMinute.displayButton());
         target.draw(twoMinutes.displayButton());
@@ -255,6 +266,8 @@ private:
         target.draw(fiveMinutes.displayButton());
         target.draw(tenMinutes.displayButton());
         target.draw(fifteenMinutes.displayButton());
+        target.draw(fivePlusFive.displayButton());
+        target.draw(fifteenPlusFive.displayButton());
         //drawing text
         target.draw(one);
         target.draw(two);
@@ -262,6 +275,8 @@ private:
         target.draw(five);
         target.draw(ten);
         target.draw(fifteen);
+        target.draw(fivePlusFiveMin);
+        target.draw(fifteenPlusFiveMin);
     }
 };
 
