@@ -47,8 +47,10 @@ int main()
     bool gameEnded = false;
     bool whiteWon;
     bool addFiveSeconds = false;
+    bool somethingWasSelected = false;
 
     Options options;
+    Button* currentlySelected = &options.fiveMinutes;
     TextureCoordinatesContainer container;
     std::vector<sf::Vector2<short>> currentMoves;
     Square** currentField;
@@ -123,41 +125,65 @@ int main()
                 //Button checking(game time selected)
                 if (!gameStarted) {
                     if (options.oneMinute.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.oneMinute;
+                        options.oneMinute.select();
                         whiteCountdown = blackCountdown = 60;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.twoMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.twoMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 120;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.threeMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.threeMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 180;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.fiveMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fiveMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 300;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.tenMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.tenMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 600;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.fifteenMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fifteenMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 900;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = false;
                     } else if (options.fivePlusFive.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fivePlusFive;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 300;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = true;
                     } else if (options.fifteenPlusFive.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fifteenPlusFive;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 900;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
