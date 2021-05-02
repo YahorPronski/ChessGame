@@ -25,7 +25,7 @@ private:
         flagStick.setPoint(2, sf::Vector2f(origin.x + squareSize / 15, origin.y + squareSize / 1.25));
         flagStick.setPoint(3, sf::Vector2f(origin.x + squareSize / 15, origin.y));
         flagStick.setPoint(4, sf::Vector2f(origin));
-        flagStick.setFillColor(sf::Color::Yellow);
+        flagStick.setFillColor(sf::Color(255,235,205));
         sf::ConvexShape flag;
         flag.setPointCount(4);
         flag.setPoint(0, sf::Vector2f(origin.x + squareSize / 15, origin.y + squareSize / 12));
