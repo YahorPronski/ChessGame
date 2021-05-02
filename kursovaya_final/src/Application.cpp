@@ -191,22 +191,16 @@ int main()
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         addFiveSeconds = true;
-                    } else if (whiteFlag.isSelected(mousePosition)) {
-                        whiteWon = false;
-                        gameEnded = true;
-                    } else if (blackFlag.isSelected(mousePosition)) {
-                        whiteWon = true;
-                        gameEnded = true;
                     }
                 }
-                // if (whiteFlag.surrender.isSelected(mousePosition)) {
-                //                    gameEnded = true;
-                //                    whiteWon = false;
-                //                }
-                //                if (blackFlag.surrender.isSelected(mousePosition)) {
-                //                    gameEnded = true;
-                //                    whiteWon = true;
-                //                }
+                if (whiteFlag.isSelected(mousePosition)) {
+                    whiteWon = false;
+                    gameEnded = true;
+                }
+                if (blackFlag.isSelected(mousePosition)) {
+                    whiteWon = true;
+                    gameEnded = true;
+                }
                 currentField = isLeftField ? leftField : rightField;
 
                 if (firstClickAccess) {
