@@ -205,14 +205,15 @@ private:
 
 class Options: public sf::Drawable {
 public:
-    Button oneMinute = Button(10*squareSize, squareSize * 1, squareSize * 2, squareSize * 0.9);
-    Button twoMinutes = Button(10*squareSize, squareSize * 2, squareSize * 2, squareSize * 0.9);
-    Button threeMinutes = Button(10*squareSize, squareSize * 3, squareSize * 2, squareSize * 0.9);
-    Button fiveMinutes = Button(10*squareSize, squareSize * 4, squareSize * 2, squareSize * 0.9);
-    Button tenMinutes = Button(10*squareSize, squareSize * 5, squareSize * 2, squareSize * 0.9);
-    Button fifteenMinutes = Button(10*squareSize, squareSize * 6, squareSize * 2, squareSize * 0.9);
-    Button oneHour = Button(10*squareSize, squareSize * 7, squareSize * 2, squareSize * 0.9);
-    Button noTime = Button(10*squareSize, squareSize * 8, squareSize * 2, squareSize * 0.9);
+    const float padding = squareSize * 0.2;
+    Button oneMinute = Button(10*squareSize, squareSize * 1.5, squareSize * 2, squareSize * 0.75);
+    Button twoMinutes = Button(10*squareSize, squareSize * 2.25 + padding, squareSize * 2, squareSize * 0.75);
+    Button threeMinutes = Button(10*squareSize, squareSize * 3 + padding * 2, squareSize * 2, squareSize * 0.75);
+    Button fiveMinutes = Button(10*squareSize, squareSize * 3.75 + padding * 3, squareSize * 2, squareSize * 0.75);
+    Button tenMinutes = Button(10*squareSize, squareSize * 4.5 + padding * 4, squareSize * 2, squareSize * 0.75);
+    Button fifteenMinutes = Button(10*squareSize, squareSize * 5.25 + padding * 5, squareSize * 2, squareSize * 0.75);
+    Button fivePlusFive = Button(10*squareSize, squareSize * 6 + padding * 6, squareSize * 2, squareSize * 0.75);
+    Button fifteenPlusFive = Button(10*squareSize, squareSize * 6.75 + padding * 7, squareSize * 2, squareSize * 0.75);
 private:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
@@ -220,58 +221,44 @@ private:
         if (!myFont.loadFromFile(font)) {
             throw "Can't load";
         }
-
-        float textScale = squareSize / 88;
-
         // one minute
         sf::Text one;
         one.setString("1 minute");
-        one.setPosition(10 * squareSize + squareSize / 8, squareSize * 1 + squareSize / 5);
-        one.scale(textScale, textScale);
+        one.setPosition(10 * squareSize + squareSize / 8, squareSize * 1.5 + squareSize / 4 - padding);
+        one.setCharacterSize(squareSize * 0.35);
         one.setFont(myFont);
         // 2 minutes
         sf::Text two;
         two.setString("2 minutes");
-        two.setPosition(10 * squareSize + squareSize / 8, squareSize * 2 + squareSize / 5);
-        two.scale(textScale, textScale);
+        two.setPosition(10 * squareSize + squareSize / 8, squareSize * 2.25 + squareSize / 4);
+        two.setCharacterSize(squareSize * 0.35);
         two.setFont(myFont);
         // 3 minutes
         sf::Text three;
         three.setString("3 minutes");
-        three.setPosition(10 * squareSize + squareSize / 8, squareSize * 3 + squareSize / 5);
-        three.scale(textScale, textScale);
+        three.setCharacterSize(squareSize * 0.35);
+        three.setPosition(10 * squareSize + squareSize / 8, squareSize * 3 + squareSize / 4 + padding);
         three.setFont(myFont);
         // 5
-        sf::Text five;
+        sf::Text five = three;
         five.setString("5 minutes");
-        five.scale(textScale, textScale);
-        five.setFont(myFont);
-        five.setPosition(10 * squareSize + squareSize / 8, squareSize * 4 + squareSize / 5);
+        five.setPosition(10 * squareSize + squareSize / 8, squareSize * 3.75 + squareSize / 4 + padding * 2);
         //10
-        sf::Text ten;
+        sf::Text ten = three;
         ten.setString("10 minutes");
-        ten.scale(textScale, textScale);
-        ten.setFont(myFont);
-        ten.setPosition(10 * squareSize + squareSize / 8, squareSize * 5 + squareSize / 5);
+        ten.setPosition(10 * squareSize + squareSize / 8, squareSize * 4.5 + squareSize / 4 + padding * 3);
         // 15
-        sf::Text fifteen;
+        sf::Text fifteen = three;
         fifteen.setString("15 minutes");
-        fifteen.scale(textScale, textScale);
-        fifteen.setFont(myFont);
-        fifteen.setPosition(10 * squareSize + squareSize / 8, squareSize * 6 + squareSize / 5);
-        // 60
-        sf::Text hour;
-        hour.setString("60 minutes");
-        hour.scale(textScale, textScale);
-        hour.setFont(myFont);
-        hour.setPosition(10 * squareSize + squareSize / 8, squareSize * 7 + squareSize / 5);
-        // No Time
-        sf::Text endless;
-        endless.setString("No time");
-        endless.scale(textScale, textScale);
-        endless.setFont(myFont);
-        endless.setPosition(10 * squareSize + squareSize / 8, squareSize * 8 + squareSize / 5);
-
+        fifteen.setPosition(10 * squareSize + squareSize / 8, squareSize * 5.25 + squareSize / 4 + padding * 4);
+        // 5 | 5
+        sf::Text fivePlusFiveMin = three;
+        fivePlusFiveMin.setString("5 | 5 min.");
+        fivePlusFiveMin.setPosition(10 * squareSize + squareSize / 8, squareSize * 6 + squareSize / 4 + padding * 5);
+        // 15 | 5
+        sf::Text fifteenPlusFiveMin = three;
+        fifteenPlusFiveMin.setString("15 | 5 min.");
+        fifteenPlusFiveMin.setPosition(10 * squareSize + squareSize / 8, squareSize * 6.75 + squareSize / 4 + padding * 6);
         //
         target.draw(oneMinute.displayButton());
         target.draw(twoMinutes.displayButton());
@@ -279,8 +266,8 @@ private:
         target.draw(fiveMinutes.displayButton());
         target.draw(tenMinutes.displayButton());
         target.draw(fifteenMinutes.displayButton());
-        target.draw(oneHour.displayButton());
-        target.draw(noTime.displayButton());
+        target.draw(fivePlusFive.displayButton());
+        target.draw(fifteenPlusFive.displayButton());
         //drawing text
         target.draw(one);
         target.draw(two);
@@ -288,8 +275,8 @@ private:
         target.draw(five);
         target.draw(ten);
         target.draw(fifteen);
-        target.draw(hour);
-        target.draw(endless);
+        target.draw(fivePlusFiveMin);
+        target.draw(fifteenPlusFiveMin);
     }
 };
 

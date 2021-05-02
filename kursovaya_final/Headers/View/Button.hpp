@@ -71,6 +71,24 @@ public:
         return false;
       }
     }
+
+    Button& operator=(const Button& right) {
+        BOX = right.BOX;
+        return *this;
+    }
+
+    Button(const Button& button) {
+        BOX = button.BOX;
+    }
+
+    void select() {
+        BOX.setOutlineColor(Color(255, 0, 0));
+        BOX.setOutlineThickness(squareSize / 10);
+    }
+
+    void unselect() {
+        BOX.setOutlineThickness(0);
+    }
     //Вывод Текста
     Text displayText() const {
 //      TXT.setString(text);  // загружаем в выводимый текст загружаемый текст

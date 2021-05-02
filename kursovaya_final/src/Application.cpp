@@ -46,8 +46,11 @@ int main()
     bool isWhitesMove = true;
     bool gameEnded = false;
     bool whiteWon;
+    bool addFiveSeconds = false;
+    bool somethingWasSelected = false;
 
     Options options;
+    Button* currentlySelected = &options.fiveMinutes;
     TextureCoordinatesContainer container;
     std::vector<sf::Vector2<short>> currentMoves;
     Square** currentField;
@@ -78,10 +81,10 @@ int main()
     whiteTimer.setFont(myFont);
     whiteTimer.setPosition(squareSize * 4, squareSize * 10.5);
     whiteTimer.setString(timeFormat(whiteCountdown));
-    whiteTimer.setScale(2.5, 2.5);
+    whiteTimer.setCharacterSize(squareSize * 0.5);
     sf::Text blackTimer;
     blackTimer.setFont(myFont);
-    blackTimer.setScale(2.5, 2.5);
+    blackTimer.setCharacterSize(squareSize * 0.5);
     blackTimer.setPosition(squareSize * 16, squareSize * 10.5);
     blackTimer.setString(timeFormat(blackCountdown));
     sf::Clock clock;
@@ -119,32 +122,72 @@ int main()
         if (!gameEnded) {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
-                //Button checking
+                //Button checking(game time selected)
                 if (!gameStarted) {
                     if (options.oneMinute.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.oneMinute;
+                        options.oneMinute.select();
                         whiteCountdown = blackCountdown = 60;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.twoMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.twoMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 120;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.threeMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.threeMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 180;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.fiveMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fiveMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 300;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.tenMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.tenMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 600;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
                     } else if (options.fifteenMinutes.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fifteenMinutes;
+                        (*currentlySelected).select();
                         whiteCountdown = blackCountdown = 900;
                         blackTimer.setString(timeFormat(blackCountdown));
                         whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = false;
+                    } else if (options.fivePlusFive.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fivePlusFive;
+                        (*currentlySelected).select();
+                        whiteCountdown = blackCountdown = 300;
+                        blackTimer.setString(timeFormat(blackCountdown));
+                        whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = true;
+                    } else if (options.fifteenPlusFive.isSelected(mousePosition)) {
+                        (*currentlySelected).unselect();
+                        currentlySelected = &options.fifteenPlusFive;
+                        (*currentlySelected).select();
+                        whiteCountdown = blackCountdown = 900;
+                        blackTimer.setString(timeFormat(blackCountdown));
+                        whiteTimer.setString(timeFormat(whiteCountdown));
+                        addFiveSeconds = true;
                     }
                 }
                 //
@@ -198,6 +241,15 @@ int main()
                         firstClickAccess = true;
                         //timer.stop
                         gameStarted = true;
+                        if (addFiveSeconds && gameStarted) {
+                            if (!isWhitesMove) {
+                                blackCountdown += 5;
+                                blackTimer.setString(timeFormat(blackCountdown));
+                            } else {
+                                whiteCountdown += 5;
+                                whiteTimer.setString(timeFormat(whiteCountdown));
+                            }
+                        }
                         isWhitesMove = !isWhitesMove;
                     }
                     else if (isCorrectClick(isLeftField, mousePosition)) {
@@ -231,11 +283,11 @@ int main()
             if (win.getString() == "") {
                 win.setString(whiteWon ? "White won" : "Black won");
             }
-            win.setScale(3.0, 3.0);
+            win.setCharacterSize(squareSize * 0.6);
             win.setPosition(squareSize * 10, squareSize * 10);
             restartText.setFont(myFont);
             restartText.setString("Restart");
-            restartText.setScale(2.0, 2.0);
+            restartText.setCharacterSize(squareSize * 0.35);
             restartText.setPosition(squareSize*10 + squareSize / 5, squareSize * 11);
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
