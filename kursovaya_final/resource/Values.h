@@ -35,4 +35,5 @@ const float fileSquareSize = 250;
 
 const std::string textureFilePath = "resource//chess.png";
 const std::string coordsTextureFilePath = "resource//coords_texture.jpg";
+const std::string flagFilePath = "resource//whiteFlag.png";
 const std::string font = "resource//terminal.otf";

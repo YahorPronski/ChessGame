@@ -4,7 +4,7 @@
 #include "../Headers/ViewModel/OnClickHandling.h"
 #include "../Headers/Model/TextureCoordinatesContainer.h"
 #include "../Headers/View/Graphic.h"
-#include <string>
+#include "../Headers/View/Flag.h"
 
 #include <SFML/Audio.hpp>
 #include <sstream>
@@ -49,6 +49,8 @@ int main()
     bool addFiveSeconds = false;
     bool somethingWasSelected = false;
 
+    flag whiteFlag = flag(sf::Vector2f(squareSize * 8, squareSize * 10));
+    flag blackFlag = flag(sf::Vector2f(squareSize * 20, squareSize * 10));
     Options options;
     Button* currentlySelected = &options.fiveMinutes;
     TextureCoordinatesContainer container;
@@ -69,7 +71,7 @@ int main()
 
     sf::Font myFont;
     sf::Text win;
-    Button restart = Button(squareSize * 10, squareSize * 11, squareSize * 2, squareSize / 2);
+    Button restart = Button(squareSize * 10, squareSize * 10, squareSize * 2, squareSize / 2);
     sf::Text restartText;
     if (!myFont.loadFromFile(font)) {
         throw "Flaj";
@@ -122,6 +124,7 @@ int main()
         if (!gameEnded) {
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
+
                 //Button checking(game time selected)
                 if (!gameStarted) {
                     if (options.oneMinute.isSelected(mousePosition)) {
@@ -190,7 +193,14 @@ int main()
                         addFiveSeconds = true;
                     }
                 }
-                //
+                if (whiteFlag.isSelected(mousePosition)) {
+                    whiteWon = false;
+                    gameEnded = true;
+                }
+                if (blackFlag.isSelected(mousePosition)) {
+                    whiteWon = true;
+                    gameEnded = true;
+                }
                 currentField = isLeftField ? leftField : rightField;
 
                 if (firstClickAccess) {
@@ -284,14 +294,15 @@ int main()
                 win.setString(whiteWon ? "White won" : "Black won");
             }
             win.setCharacterSize(squareSize * 0.6);
-            win.setPosition(squareSize * 10, squareSize * 10);
+            win.setPosition(squareSize * 10 - squareSize / 7, squareSize * 9);
             restartText.setFont(myFont);
             restartText.setString("Restart");
             restartText.setCharacterSize(squareSize * 0.35);
-            restartText.setPosition(squareSize*10 + squareSize / 5, squareSize * 11);
+            restartText.setPosition(squareSize * 10 + squareSize / 5, squareSize * 10);
             if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
                 if (restart.isSelected(mousePosition)) {
+                    window.close();
                     main();
                     return 0;
                 }
@@ -311,6 +322,8 @@ int main()
             window.draw(restartText);
         }
         if (showMoves) window.draw(movesTexture);
+        window.draw(whiteFlag);
+        window.draw(blackFlag);
         window.display();
         sf::sleep(sf::milliseconds(10));
     }
