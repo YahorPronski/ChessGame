@@ -81,6 +81,10 @@ public:
         BOX = button.BOX;
     }
 
+    void changeColor(sf::Color color) {
+        BOX.setFillColor(color);
+    }
+
     void select() {
         BOX.setOutlineColor(Color(255, 0, 0));
         BOX.setOutlineThickness(squareSize / 10);

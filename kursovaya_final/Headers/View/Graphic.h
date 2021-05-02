@@ -4,6 +4,7 @@
 #include "Button.hpp"
 #include "../../resource/Values.h"
 #include <SFML/Graphics.hpp>
+#include "Flag.h"
 
 class ChessTexture : public sf::Drawable, public sf::Transformable
 {
