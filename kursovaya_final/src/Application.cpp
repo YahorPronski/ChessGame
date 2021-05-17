@@ -9,14 +9,6 @@
 #include <SFML/Audio.hpp>
 #include <sstream>
 
-// Доделать:
-// Звуки
-// Рокировка
-// Таймер
-// Проверка на мат
-// Добавить текстуры координаты доски
-// Превращение пешки
-// Взятие на проходе
 
 std::string timeFormat(int time) {
     std::stringstream ss;
