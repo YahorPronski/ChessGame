@@ -9,14 +9,6 @@
 #include <SFML/Audio.hpp>
 #include <sstream>
 
-// Доделать:
-// Звуки
-// Рокировка
-// Таймер
-// Проверка на мат
-// Добавить текстуры координаты доски
-// Превращение пешки
-// Взятие на проходе
 
 std::string timeFormat(int time) {
     std::stringstream ss;
@@ -297,7 +289,7 @@ int main()
                 win.setString(whiteWon ? "White won" : "Black won");
             }
             win.setCharacterSize(squareSize * 0.6);
-            win.setPosition(squareSize * 10 - squareSize / 7, squareSize * 9);
+            win.setPosition(squareSize * 10 - squareSize / 2, squareSize * 9);
             restartText.setFont(myFont);
             restartText.setString("Restart");
             restartText.setCharacterSize(squareSize * 0.35);
