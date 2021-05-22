@@ -220,7 +220,7 @@ private:
     {
         sf::Font myFont;
         if (!myFont.loadFromFile(font)) {
-            throw "Can't load";
+            throw "Can't load =(";
         }
         // one minute
         sf::Text one;

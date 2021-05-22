@@ -1,11 +1,10 @@
 #include "../../Headers/Model/Core.h"
 #include "../../Headers/Model/MovesFinders.h"
 
-bool whiteKingLongCastleAvailable = true;
-bool whiteKingShortCastleAvailable = true;
-
-bool blackKingLongCastleAvailable = true;
-bool blackKingShortCastleAvailable = true;
+bool whiteKingLongCastleAvailable;
+bool whiteKingShortCastleAvailable;
+bool blackKingLongCastleAvailable;
+bool blackKingShortCastleAvailable;
 
 void makeMove(Square** leftField, Square** rightField, bool isLeft, Square fromSquare, Square toSquare) {
 

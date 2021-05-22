@@ -43,11 +43,16 @@ int main()
     bool isLeftField = true;
     bool showMoves = false;
     bool gameStarted = false;
-    bool isWhitesMove = true;
     bool gameEnded = false;
     bool whiteWon;
     bool addFiveSeconds = false;
     bool somethingWasSelected = false;
+
+    // Castle possibility
+    whiteKingLongCastleAvailable = true;
+    whiteKingShortCastleAvailable = true;
+    blackKingLongCastleAvailable = true;
+    blackKingShortCastleAvailable = true;
 
     flag whiteFlag = flag(sf::Vector2f(squareSize * 8, squareSize * 10));
     flag blackFlag = flag(sf::Vector2f(squareSize * 20, squareSize * 10));
@@ -74,7 +79,7 @@ int main()
     Button restart = Button(squareSize * 10, squareSize * 10, squareSize * 2, squareSize / 2);
     sf::Text restartText;
     if (!myFont.loadFromFile(font)) {
-        throw "Flaj";
+        throw ":(";
     }
     int whiteCountdown = 300;
     int blackCountdown = 300;
@@ -94,7 +99,6 @@ int main()
     // Run the main loop
     while (window.isOpen())
     {
-        double elapsed = clock.getElapsedTime().asSeconds();
         // Handle exit event
         sf::Event event;
         while (window.pollEvent(event))
@@ -108,7 +112,7 @@ int main()
                     gameEnded = true;
                     whiteWon = whiteCountdown > 0;
                 } else {
-                    if (isWhitesMove) {
+                    if (isLeftField) {
                         whiteCountdown--;
                         whiteTimer.setString(timeFormat(whiteCountdown));
                         clock.restart();
@@ -236,7 +240,7 @@ int main()
 
                             if (isCheck(isLeftField ? rightField : leftField, isLeftField ? BLACK : WHITE)) {
                                 // Mate action
-                                if (isWhitesMove) {
+                                if (isLeftField) {
                                     whiteWon = true;
                                 }
                                 gameEnded = true;
@@ -247,12 +251,11 @@ int main()
                             }
                         }
 
-                        isLeftField = isLeftField ? false : true;
                         firstClickAccess = true;
-                        //timer.stop
+
                         gameStarted = true;
                         if (addFiveSeconds && gameStarted) {
-                            if (!isWhitesMove) {
+                            if (!isLeftField) {
                                 blackCountdown += 5;
                                 blackTimer.setString(timeFormat(blackCountdown));
                             } else {
@@ -260,7 +263,7 @@ int main()
                                 whiteTimer.setString(timeFormat(whiteCountdown));
                             }
                         }
-                        isWhitesMove = !isWhitesMove;
+                        isLeftField = !isLeftField;
                     }
                     else if (isCorrectClick(isLeftField, mousePosition)) {
 

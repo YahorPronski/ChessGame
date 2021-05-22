@@ -8,7 +8,6 @@
 
 extern bool whiteKingLongCastleAvailable;
 extern bool whiteKingShortCastleAvailable;
-
 extern bool blackKingLongCastleAvailable;
 extern bool blackKingShortCastleAvailable;
 
